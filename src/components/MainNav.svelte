@@ -1,22 +1,38 @@
+<script lang="ts">
+	export let segment: string;
+</script>
+
 <div class='hero'>
 	<section class='hero-section'>
 		<h2 class='hero-title'>Abraham</h2>
-		<a class='hero-nav' href="."><h2>Projects</h2></a>
+		<a aria-current="{segment === 'projects' ? 'page' : undefined}" class='hero-nav' href="projects"><h2>Projects</h2></a>
 	</section>
 
 	<section class='hero-section'>
 		<h2 class='hero-title'>Anak</h2>
-		<a class='hero-nav' href="blog"><h2>Blog</h2></a>
+		<a rel=prefetch aria-current="{segment === 'blog' ? 'page' : undefined}" class='hero-nav' href="blog"><h2>Blog</h2></a>
 	</section>
 
 	<section class='hero-section'>
 		<h2 class='hero-title'>Agung</h2>
-		<a class='hero-nav' href="about"><h2>About</h2></a>
+		<a aria-current="{segment === 'about' ? 'page' : undefined}" class='hero-nav' href="about"><h2>About</h2></a>
 	</section>
 </div>
 
 <style>
+	@font-face {
+        font-family: 'AlienLeague Expanded';
+        src: local('AlienLeagueExpanded'), url('/fonts/AlienLeagueExpanded.otf') format('opentype');
+	}
+	
+	@font-face {
+        font-family: 'Monument Valley';
+        src: local('MonumentValley'), url('/fonts/MonumentValley.otf') format('opentype');
+    }
+
 	h2 {
+		font-family: 'AlienLeague Expanded', -apple-system, BlinkMacSystemFont, 
+		'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         margin: 0;
 		text-transform: uppercase;
 	}
@@ -63,6 +79,7 @@
 
 	.hero-nav h2 {
 		font-size: 32px;
+		font-family: 'Monument Valley';
 		line-height: 60px;
 	}
 
