@@ -24,6 +24,7 @@
         show = !show;
         cardHeight = projectCardElement.getBoundingClientRect().height;
         bodyHeight = projectBodyElement.getBoundingClientRect().height;
+        storyHeightBefore = projectStoryElement.getBoundingClientRect().height;
 
         if (show) {
             if (isMobile()) {
@@ -39,6 +40,16 @@
                     },
                     "-=0.9"
                 );
+            } else {
+                projectStoryElement.style.display = "block";
+                storyHeightCurrent = projectStoryElement.getBoundingClientRect()
+                    .height;
+
+                tl.to(projectCardElement, {
+                    height: cardHeight + storyHeightCurrent - storyHeightBefore,
+                    duration: 1,
+                    ease: "back.out(1)",
+                });
             }
         } else {
             if (isMobile()) {
@@ -54,11 +65,40 @@
                     },
                     "-=0.9"
                 );
+            } else {
+                tl.to(projectCardElement, {
+                    height: 312.5,
+                    duration: 1,
+                    ease: "back.out(1)",
+                }).to(
+                    projectStoryElement,
+                    {
+                        display: "-webkit-box",
+                    },
+                    "-=0.8"
+                );
             }
         }
     };
 
-    const handleResize = (e: any) => {};
+    const handleResize = (e: any) => {
+        projectBodyElement.removeAttribute("style");
+        if (show && isMobile()) {
+            bodyHeight = projectBodyElement.getBoundingClientRect().height;
+            projectBodyElement.style.opacity = "1";
+            projectBodyElement.style.top = "300px";
+            projectCardElement.style.height = 312.5 + bodyHeight + "px";
+        } else if (show && !isMobile()) {
+            projectStoryElement.style.display = "-webkit-box";
+            storyHeightBefore = projectStoryElement.getBoundingClientRect()
+                .height;
+            projectStoryElement.style.display = "block";
+            storyHeightCurrent = projectStoryElement.getBoundingClientRect()
+                .height;
+            projectCardElement.style.height =
+                312.5 + storyHeightCurrent - storyHeightBefore + "px";
+        }
+    };
 </script>
 
 <svelte:window on:resize="{handleResize}" />
@@ -86,9 +126,9 @@
         <h3>Talons</h3>
         <div class="expand-button" on:click="{toggleStory}">
             {#if show}
-                <ChevronUp size="{24}" />
+                <ChevronUp size="{24}" styles="fill: currentColor;" />
             {:else}
-                <ChevronDown size="{24}" />
+                <ChevronDown size="{24}" styles="fill: currentColor;" />
             {/if}
         </div>
     </div>
@@ -204,7 +244,7 @@
             overflow: hidden;
             text-overflow: ellipsis;
             display: -webkit-box;
-            -webkit-line-clamp: 8;
+            -webkit-line-clamp: 9;
             -webkit-box-orient: vertical;
         }
 
