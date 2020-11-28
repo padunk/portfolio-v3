@@ -1,35 +1,107 @@
 <script lang="ts">
+    import { gsap } from "gsap";
+    import { onMount } from "svelte";
+    import { isMobile } from "../utils/helpers";
     export let segment: string;
+
+    onMount(() => {
+        const tl = gsap.timeline({
+            defaults: {
+                opacity: 0,
+                ease: "expo.out",
+                backgroundColor: "white",
+            },
+        });
+        const init = () => {
+            tl.from(".hero", {
+                autoAlpha: 0,
+            });
+
+            if (isMobile()) {
+                tl.from(".bg-left", {
+                    translateX: "100%",
+                    duration: 1.5,
+                })
+                    .from(
+                        ".bg-center",
+                        {
+                            translateX: "-100%",
+                            duration: 1.5,
+                        },
+                        "-=0.8"
+                    )
+                    .from(
+                        ".bg-right",
+                        {
+                            translateX: "100%",
+                            duration: 1.5,
+                        },
+                        "-=0.8"
+                    );
+            } else {
+                tl.from(".bg-left", {
+                    translateY: "100%",
+                    duration: 1.5,
+                })
+                    .from(
+                        ".bg-center",
+                        {
+                            translateY: "-100%",
+                            duration: 1.5,
+                        },
+                        "-=0.8"
+                    )
+                    .from(
+                        ".bg-right",
+                        {
+                            translateY: "100%",
+                            duration: 1.5,
+                        },
+                        "-=0.8"
+                    );
+            }
+        };
+
+        init();
+    });
 </script>
 
 <div class="hero">
-    <section class="hero-section">
-        <h2 class="hero-title">Abraham</h2>
-        <a
-            aria-current="{segment === 'projects' ? 'page' : undefined}"
-            class="hero-nav"
-            href="projects"
-        ><h2>Projects</h2></a>
-    </section>
+    <div class="moving-background">
+        <section class="bg-left">
+            <div class="hero-section section-left">
+                <h2 class="hero-title">Abraham</h2>
+                <a
+                    aria-current="{segment === 'projects' ? 'page' : undefined}"
+                    class="hero-nav"
+                    href="projects"
+                ><h2>Projects</h2></a>
+            </div>
+        </section>
 
-    <section class="hero-section">
-        <h2 class="hero-title">Anak</h2>
-        <a
-            rel="prefetch"
-            aria-current="{segment === 'blog' ? 'page' : undefined}"
-            class="hero-nav"
-            href="blog"
-        ><h2>Blog</h2></a>
-    </section>
+        <section class="bg-center">
+            <div class="hero-section section-center">
+                <h2 class="hero-title">Anak</h2>
+                <a
+                    rel="prefetch"
+                    aria-current="{segment === 'blog' ? 'page' : undefined}"
+                    class="hero-nav"
+                    href="blog"
+                ><h2>Blog</h2></a>
+            </div>
+        </section>
 
-    <section class="hero-section">
-        <h2 class="hero-title">Agung</h2>
-        <a
-            aria-current="{segment === 'about' ? 'page' : undefined}"
-            class="hero-nav"
-            href="about"
-        ><h2>About</h2></a>
-    </section>
+        <section class="bg-right">
+            <div class="hero-section section-right">
+                <h2 class="hero-title">Agung</h2>
+                <a
+                    aria-current="{segment === 'about' ? 'page' : undefined}"
+                    class="hero-nav"
+                    href="about"
+                ><h2>About</h2></a>
+            </div>
+        </section>
+    </div>
 </div>
 
 <style>
@@ -54,12 +126,33 @@
     }
 
     .hero {
-        display: grid;
+        /* display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         justify-items: center;
         row-gap: 8px;
         margin: 0 auto;
-        width: 100vw;
+        width: 100vw; */
+        visibility: hidden;
+    }
+
+    .moving-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+    }
+
+    .bg-left,
+    .bg-center,
+    .bg-right {
+        height: 33.3333%;
+        width: 100%;
+        background-color: hsl(260, 47%, 27%);
+        display: flex;
     }
 
     .hero-section {
@@ -70,6 +163,7 @@
         perspective: 1000px;
         perspective-origin: center;
         position: relative;
+        z-index: 10;
         width: 100%;
         min-width: 200px;
     }
@@ -83,10 +177,9 @@
     }
 
     .hero-nav {
-        color: hsl(247, 29%, 66%);
+        color: hsl(328, 53%, 69%);
         opacity: 0;
         position: absolute;
-        bottom: 0;
         transform: rotateX(-90deg) translateY(100%);
         transform-origin: bottom;
         transition-property: transform, opacity;
@@ -112,6 +205,19 @@
     @media only screen and (min-width: 640px) {
         .hero-title {
             font-size: 60px;
+        }
+    }
+
+    @media only screen and (min-width: 720px) {
+        .moving-background {
+            flex-direction: row;
+        }
+
+        .bg-left,
+        .bg-center,
+        .bg-right {
+            width: 33.3333%;
+            height: 100%;
         }
     }
 </style>
