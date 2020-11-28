@@ -52,12 +52,13 @@
                 });
             }
         } else {
+            tl.to(projectCardElement, {
+                height: 312.5,
+                duration: 1,
+                ease: "back.out(1)",
+            });
             if (isMobile()) {
-                tl.to(projectCardElement, {
-                    height: 312.5,
-                    duration: 1,
-                    ease: "back.out(1)",
-                }).to(
+                tl.to(
                     projectBodyElement,
                     {
                         top: 0,
@@ -66,11 +67,7 @@
                     "-=0.9"
                 );
             } else {
-                tl.to(projectCardElement, {
-                    height: 312.5,
-                    duration: 1,
-                    ease: "back.out(1)",
-                }).to(
+                tl.to(
                     projectStoryElement,
                     {
                         display: "-webkit-box",
@@ -89,6 +86,7 @@
             projectBodyElement.style.top = "300px";
             projectCardElement.style.height = 312.5 + bodyHeight + "px";
         } else if (show && !isMobile()) {
+            // hacky way to get the story height
             projectStoryElement.style.display = "-webkit-box";
             storyHeightBefore = projectStoryElement.getBoundingClientRect()
                 .height;
