@@ -151,8 +151,23 @@
     .bg-right {
         height: 33.3333%;
         width: 100%;
-        background-color: hsl(260, 47%, 27%);
         display: flex;
+        background-image: url("/images/hero-portrait.jpg");
+        background-color: var(--primary);
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 0% 80%;
+    }
+
+    .bg-left::after,
+    .bg-center::after,
+    .bg-right::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: hsla(260, 47%, 27%, 0.8);
     }
 
     .hero-section {
@@ -169,6 +184,7 @@
     }
 
     .hero-title {
+        color: var(--tertiary);
         font-size: 48px;
         line-height: 60px;
         transform-origin: top;
@@ -177,7 +193,7 @@
     }
 
     .hero-nav {
-        color: hsl(328, 53%, 69%);
+        color: var(--secondary);
         opacity: 0;
         position: absolute;
         transform: rotateX(-90deg) translateY(100%);
@@ -218,6 +234,7 @@
         .bg-right {
             width: 33.3333%;
             height: 100%;
+            background-image: url("/images/hero-landscape.jpg");
         }
     }
 </style>
