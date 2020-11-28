@@ -149,7 +149,7 @@
     }
 
     .project-body {
-        background-color: orange;
+        background-color: var(--tangerine);
         box-sizing: border-box;
         position: absolute;
         width: 250px;
@@ -163,9 +163,10 @@
     }
 
     .project-body__story {
-        text-align: justify;
-        font-size: 20px;
-        font-family: "Dancing Script", cursive;
+        /* text-align: justify; */
+        line-height: 1.48;
+        font-size: 16px;
+        font-family: "Martel", var(--default-text);
     }
 
     .noEllipsis {
@@ -173,7 +174,7 @@
     }
 
     .project-header {
-        background-color: burlywood;
+        color: var(--tangerine-light-alpha-8);
         position: absolute;
         left: 50%;
         top: 60px;
@@ -184,7 +185,7 @@
         align-items: flex-end;
         justify-content: center;
         transform: translateX(-50%);
-        background: linear-gradient(to bottom, transparent, rebeccapurple 90%);
+        background: linear-gradient(to bottom, transparent, var(--primary) 90%);
         border-radius: 8px;
     }
 
@@ -197,7 +198,6 @@
     }
 
     .project-image__container {
-        background-color: aqua;
         position: absolute;
         width: 250px;
         height: 250px;
