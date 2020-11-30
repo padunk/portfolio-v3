@@ -167,8 +167,9 @@
             class="link-gradient"
             data-show-count="false"
         >
-            hi to me.
+            hi to me
         </a>
+        or stalk me &#x1F609;
     </h3>
     <div class="social-media">
         <ul class="social-media__lists">
@@ -293,13 +294,23 @@
         letter-spacing: 0.5px;
         text-decoration: none;
         padding-left: 4px;
+        position: relative;
+    }
+
+    .stack-link::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, var(--grayish), transparent 75%);
     }
 
     .stack-link:link,
     .stack-link:visited {
         color: var(--primary-light);
         border-left: 1px solid var(--grayish);
-        border-bottom: 1px solid var(--grayish);
         transition-property: color, border;
         transition-duration: 1200ms;
         transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -309,7 +320,15 @@
     .stack-link:active {
         color: var(--tangerine);
         border-left: 1px solid var(--tangerine-light-alpha-8);
-        border-bottom: 1px solid var(--tangerine-light-alpha-8);
+    }
+
+    .stack-link:hover.stack-link::after,
+    .stack-link:active.stack-link::after {
+        background: linear-gradient(
+            90deg,
+            var(--tangerine-light-alpha-8),
+            transparent 75%
+        );
     }
 
     .social-media__title {
@@ -369,5 +388,8 @@
     }
 
     @media only screen and (min-width: 640px) {
+        p {
+            font-size: 20px;
+        }
     }
 </style>
