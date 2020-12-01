@@ -99,6 +99,21 @@
                 312.5 + storyHeightCurrent - storyHeightBefore + "px";
         }
     };
+
+    let showingVideo: boolean = false;
+    let cursorNone: boolean = false;
+    let timeout: number;
+
+    const controlCursorDisplay = () => {
+        if (timeout) {
+            window.clearTimeout(timeout);
+        }
+        cursorNone = false;
+
+        timeout = window.setTimeout(() => {
+            cursorNone = true;
+        }, 2000);
+    };
 </script>
 
 <svelte:window on:resize="{handleResize}" />
@@ -118,7 +133,11 @@
         </p>
     </div>
     <div class="project-header">
-        <h3>{project.title}</h3>
+        <h3 class="project-title">
+            <a href="{project.url}" target="_blank" rel="noopener noreferrer">
+                {project.title}
+            </a>
+        </h3>
         <div class="expand-button" on:click="{toggleStory}">
             {#if show}
                 <ChevronUp size="{24}" styles="fill: currentColor;" />
@@ -127,12 +146,27 @@
             {/if}
         </div>
     </div>
-    <div class="project-image__container">
-        <img
-            src="{project.imgPath}.{project.imgType}"
-            alt="{project.alt}"
-            class="project-image"
-        />
+    <div
+        class="project-media__container"
+        class:cursorNone
+        on:mouseenter="{() => (showingVideo = true)}"
+        on:mouseleave="{() => (showingVideo = false)}"
+        on:mousemove="{controlCursorDisplay}"
+    >
+        {#if showingVideo}
+            <!-- content here -->
+            <video autoplay loop muted class="project-media">
+                <source src="{project.videoPath}" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+        {:else}
+            <!-- else content here -->
+            <img
+                src="{project.imgPath}.{project.imgType}"
+                alt="{project.alt}"
+                class="project-media"
+            />
+        {/if}
     </div>
 </article>
 
@@ -171,7 +205,6 @@
     }
 
     .project-header {
-        color: var(--tangerine-light-alpha-8);
         position: absolute;
         left: 50%;
         top: 60px;
@@ -190,15 +223,36 @@
         border-radius: 8px;
     }
 
+    .project-title a:link,
+    .project-title a:visited {
+        color: var(--tangerine-light-alpha-8);
+    }
+
+    .project-title a:hover,
+    .project-title a:active {
+        background: linear-gradient(
+            90deg,
+            var(--tangerine),
+            var(--secondary-bright)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-box-decoration-break: clone;
+        background-clip: text;
+        box-decoration-break: clone;
+        text-shadow: none;
+    }
+
     .expand-button {
         position: absolute;
         bottom: 0;
         right: 0;
         margin-right: 8px;
         cursor: pointer;
+        color: var(--secondary-bright);
     }
 
-    .project-image__container {
+    .project-media__container {
         position: absolute;
         width: 250px;
         height: 250px;
@@ -210,10 +264,14 @@
         box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.4);
     }
 
-    .project-image {
+    .project-media {
         width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+
+    .cursorNone {
+        cursor: none;
     }
 
     @media only screen and (min-width: 720px) {
@@ -252,7 +310,7 @@
             -webkit-box-orient: vertical;
         }
 
-        .project-image__container {
+        .project-media__container {
             left: 25%;
         }
     }
