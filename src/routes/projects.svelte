@@ -1,7 +1,7 @@
 <script lang="ts">
     import { fly } from "svelte/transition";
     import ProjectCard from "../components/ProjectCard.svelte";
-
+    import projects from "../../src/projects.json";
     const testArray = [1, 2, 3, 4, 5];
 </script>
 
@@ -14,8 +14,8 @@
 </div>
 
 <section class="projects" in:fly="{{ y: 2000, duration: 2000 }}">
-    {#each testArray as project, i}
-        <ProjectCard index="{i}" />
+    {#each projects as project, i}
+        <ProjectCard project="{project}" index="{i}" />
     {/each}
 </section>
 

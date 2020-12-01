@@ -3,6 +3,7 @@
     import { gsap } from "gsap";
     import ChevronDown from "./Icons/ChevronDown.svelte";
     import ChevronUp from "./Icons/ChevronUp.svelte";
+    export let project: any;
     export let index: number;
 
     let projectCardElement: HTMLDivElement;
@@ -113,20 +114,11 @@
             class:noEllipsis
             bind:this="{projectStoryElement}"
         >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Pulvinar
-            etiam non quam lacus. Enim lobortis scelerisque fermentum dui
-            faucibus in ornare. Pellentesque dignissim enim sit amet venenatis
-            urna. Scelerisque viverra mauris in aliquam sem fringilla ut morbi.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Pulvinar
-            etiam non quam lacus. Enim lobortis scelerisque fermentum dui
-            faucibus in ornare. Pellentesque dignissim enim sit amet venenatis
-            urna. Scelerisque viverra mauris in aliquam sem fringilla ut morbi.
+            {project.description}
         </p>
     </div>
     <div class="project-header">
-        <h3>Talons</h3>
+        <h3>{project.title}</h3>
         <div class="expand-button" on:click="{toggleStory}">
             {#if show}
                 <ChevronUp size="{24}" styles="fill: currentColor;" />
@@ -137,8 +129,8 @@
     </div>
     <div class="project-image__container">
         <img
-            src="https://images.unsplash.com/photo-1567892320421-1c657571ea4a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8c2V4eXxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60"
-            alt="project"
+            src="{project.imgPath}.{project.imgType}"
+            alt="{project.alt}"
             class="project-image"
         />
     </div>
