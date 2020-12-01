@@ -83,12 +83,20 @@
         <section class="bg-center">
             <div class="hero-section section-center">
                 <h2 class="hero-title">Anak</h2>
-                <a
-                    rel="prefetch"
-                    aria-current="{segment === 'blog' ? 'page' : undefined}"
-                    class="hero-nav"
-                    href="blog"
-                ><h2>Blog</h2></a>
+                <span class="hero-nav">
+                    <a
+                        class="hero-nav__link"
+                        rel="prefetch"
+                        aria-current="{segment === 'blog' ? 'page' : undefined}"
+                        href="blog"
+                    ><h2>Blog</h2></a>
+                    <a
+                        class="hero-nav__link"
+                        rel="prefetch"
+                        aria-current="{segment === 'photo' ? 'page' : undefined}"
+                        href="photo"
+                    ><h2>Photo</h2></a>
+                </span>
             </div>
         </section>
 
@@ -201,6 +209,10 @@
         transform-origin: bottom;
         transition-property: transform, opacity;
         transition-duration: 500ms;
+    }
+
+    .hero-nav__link {
+        color: var(--secondary);
     }
 
     .hero-nav h2 {
