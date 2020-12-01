@@ -2,7 +2,6 @@
     import { fly } from "svelte/transition";
     import ProjectCard from "../components/ProjectCard.svelte";
     import projects from "../../src/projects.json";
-    const testArray = [1, 2, 3, 4, 5];
 </script>
 
 <svelte:head>
