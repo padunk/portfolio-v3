@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { fly } from "svelte/transition";
     import ProjectCard from "../components/ProjectCard.svelte";
 
     const testArray = [1, 2, 3, 4, 5];
@@ -8,13 +9,13 @@
     <title>Abraham Anak Agung - Projects</title>
 </svelte:head>
 
-<div>
+<div in:fly="{{ y: 2000, duration: 2000 }}">
     <h2 class="title">My Projects</h2>
 </div>
 
-<section class="projects">
-    {#each testArray as item}
-        <ProjectCard />
+<section class="projects" in:fly="{{ y: 2000, duration: 2000 }}">
+    {#each testArray as project, i}
+        <ProjectCard index="{i}" />
     {/each}
 </section>
 

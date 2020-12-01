@@ -2,6 +2,7 @@
     import { gsap } from "gsap";
     import { onMount } from "svelte";
     import { isMobile } from "../utils/helpers";
+    import { fade } from "svelte/transition";
     export let segment: string;
 
     onMount(() => {
@@ -66,7 +67,7 @@
     });
 </script>
 
-<div class="hero">
+<div class="hero" out:fade>
     <div class="moving-background">
         <section class="bg-left">
             <div class="hero-section section-left">

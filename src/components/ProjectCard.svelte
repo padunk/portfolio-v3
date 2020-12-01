@@ -1,8 +1,9 @@
 <script lang="ts">
+    import { fly } from "svelte/transition";
     import { gsap } from "gsap";
-    import { onMount } from "svelte";
-    import ChevronDown from "./ChevronDown.svelte";
-    import ChevronUp from "./ChevronUp.svelte";
+    import ChevronDown from "./Icons/ChevronDown.svelte";
+    import ChevronUp from "./Icons/ChevronUp.svelte";
+    export let index: number;
 
     let projectCardElement: HTMLDivElement;
     let projectBodyElement: HTMLDivElement;
@@ -101,7 +102,11 @@
 
 <svelte:window on:resize="{handleResize}" />
 
-<article class="project-card" bind:this="{projectCardElement}">
+<article
+    class="project-card"
+    bind:this="{projectCardElement}"
+    in:fly="{{ x: index % 2 === 0 ? 1000 : -1000, duration: 1000, delay: 1400 }}"
+>
     <div class="project-body" bind:this="{projectBodyElement}">
         <p
             class="project-body__story"
@@ -185,7 +190,11 @@
         align-items: flex-end;
         justify-content: center;
         transform: translateX(-50%);
-        background: linear-gradient(to bottom, transparent, var(--primary) 90%);
+        background: linear-gradient(
+            to bottom,
+            transparent 70%,
+            var(--primary-light)
+        );
         border-radius: 8px;
     }
 
@@ -226,6 +235,11 @@
 
         .project-header {
             left: 25%;
+            background: linear-gradient(
+                to bottom,
+                transparent,
+                var(--primary) 90%
+            );
         }
 
         .project-body {

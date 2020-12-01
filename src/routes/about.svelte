@@ -1,5 +1,6 @@
 <script lang="ts">
     import { gsap } from "gsap";
+    import { fly } from "svelte/transition";
     import Codepen from "../components/Icons/Codepen.svelte";
     import Github from "../components/Icons/Github.svelte";
     import Instagram from "../components/Icons/Instagram.svelte";
@@ -113,15 +114,19 @@
     <title>About</title>
 </svelte:head>
 
-<div>
-    <h2 class="title">ABOUT <span class="title-name">ABRAHAM</span></h2>
-</div>
-<div class="shake-hand" class:hide>&#x1F91D;</div>
-<section>
+<section in:fly="{{ x: 2000, duration: 2000 }}">
+    <div>
+        <h2 class="title">ABOUT <span class="title-name">ABRAHAM</span></h2>
+    </div>
+    <div class="shake-hand" class:hide>&#x1F91D;</div>
     <article class="about-me">
         <div class="about-me__content">
             <span class="waving-hand" on:click="{virtualShakeHand}">👋</span>
-            <p>I'm a web developer based in Indonesia (GMT +7).</p>
+            <p>
+                I'm a web developer ,photographer, and teacher based in
+                Indonesia (GMT +7). I love creating beautiful application and
+                solving complex tasks.
+            </p>
             <p>My current tools is:</p>
             <ul>
                 {#each stacks as stack}
@@ -331,33 +336,34 @@
         );
     }
 
+    .social-media {
+        margin-bottom: 4em;
+    }
+
     .social-media__title {
         text-align: center;
     }
 
-    .link-gradient {
-        position: relative;
+    .link-gradient:link,
+    .link-gradient:visited {
         color: var(--secondary);
-        background: var(--primary);
-        mix-blend-mode: lighten;
+        transition: all 200ms ease-in-out;
+        text-decoration: none;
     }
 
-    .link-gradient:before {
-        content: "";
+    .link-gradient:hover,
+    .link-gradient:active {
         background: linear-gradient(
-            125deg,
-            var(--primary-light),
-            var(--secondary),
-            var(--tangerine)
+            90deg,
+            var(--tangerine),
+            var(--secondary-bright)
         );
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        mix-blend-mode: darken;
-        pointer-events: none;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-box-decoration-break: clone;
+        background-clip: text;
+        box-decoration-break: clone;
+        text-shadow: none;
     }
 
     .social-media__lists {
