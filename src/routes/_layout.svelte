@@ -1,17 +1,16 @@
 <script lang="ts">
-	// import Nav from '../components/Nav.svelte';
-
-	export let segment: string;
+    // import Nav from '../components/Nav.svelte';
+    // export let segment: string;
 </script>
-
-<style>
-	main {
-		position: relative;
-	}
-</style>
 
 <!-- <Nav {segment}/> -->
 
 <main>
-	<slot></slot>
+    <slot />
 </main>
+
+<style>
+    main {
+        position: relative;
+    }
+</style>
