@@ -1,9 +1,12 @@
 <script lang="ts">
     import { fly } from "svelte/transition";
     import { gsap } from "gsap";
+    import debounce from "lodash.debounce";
     import ChevronDown from "./Icons/ChevronDown.svelte";
     import ChevronUp from "./Icons/ChevronUp.svelte";
-    export let project: any;
+    import type { ProjectDetail } from "../utils/types";
+
+    export let project: ProjectDetail;
     export let index: number;
 
     let projectCardElement: HTMLDivElement;
@@ -82,6 +85,8 @@
 
     const handleResize = (e: any) => {
         projectBodyElement.removeAttribute("style");
+        projectStoryElement.removeAttribute("style");
+
         if (show && isMobile()) {
             bodyHeight = projectBodyElement.getBoundingClientRect().height;
             projectBodyElement.style.opacity = "1";
@@ -112,11 +117,11 @@
 
         timeout = window.setTimeout(() => {
             cursorNone = true;
-        }, 2000);
+        }, 1600);
     };
 </script>
 
-<svelte:window on:resize="{handleResize}" />
+<svelte:window on:resize="{debounce(handleResize, 250, { maxWait: 1000 })}" />
 
 <article
     class="project-card"
@@ -124,13 +129,20 @@
     in:fly="{{ x: index % 2 === 0 ? 1000 : -1000, duration: 1000, delay: 1400 }}"
 >
     <div class="project-body" bind:this="{projectBodyElement}">
-        <p
+        <div
             class="project-body__story"
             class:noEllipsis
             bind:this="{projectStoryElement}"
         >
-            {project.description}
-        </p>
+            <p>{project.description}</p>
+            <p>{project.story}</p>
+            <p>{project.challenge}</p>
+            <ul class="tech-list">
+                {#each project.tech as tech}
+                    <li>{tech}</li>
+                {/each}
+            </ul>
+        </div>
     </div>
     <div class="project-header">
         <h3 class="project-title">
@@ -202,6 +214,14 @@
 
     .noEllipsis {
         -webkit-line-clamp: unset;
+    }
+
+    .tech-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        list-style-position: inside;
+        padding: 0;
+        font-size: 12px;
     }
 
     .project-header {
@@ -306,7 +326,7 @@
             overflow: hidden;
             text-overflow: ellipsis;
             display: -webkit-box;
-            -webkit-line-clamp: 9;
+            -webkit-line-clamp: 8;
             -webkit-box-orient: vertical;
         }
 
