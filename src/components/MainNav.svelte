@@ -3,7 +3,6 @@
     import { onMount } from "svelte";
     import { isMobile } from "../utils/helpers";
     import { fade } from "svelte/transition";
-    export let segment: string;
 
     onMount(() => {
         const tl = gsap.timeline({
@@ -72,11 +71,9 @@
         <section class="bg-left">
             <div class="hero-section section-left">
                 <h2 class="hero-title">Abraham</h2>
-                <a
-                    aria-current="{segment === 'projects' ? 'page' : undefined}"
-                    class="hero-nav"
-                    href="projects"
-                ><h2>Projects</h2></a>
+                <a aria-current="projects" class="hero-nav" href="projects"><h2>
+                        Projects
+                    </h2></a>
             </div>
         </section>
 
@@ -87,14 +84,14 @@
                     <a
                         class="hero-nav__link"
                         rel="prefetch"
-                        aria-current="{segment === 'blog' ? 'page' : undefined}"
-                        href="blog"
+                        aria-current="blog"
+                        href="construction"
                     ><h2>Blog</h2></a>
                     <a
                         class="hero-nav__link"
                         rel="prefetch"
-                        aria-current="{segment === 'photo' ? 'page' : undefined}"
-                        href="photo"
+                        aria-current="photo"
+                        href="construction"
                     ><h2>Photo</h2></a>
                 </span>
             </div>
@@ -103,11 +100,9 @@
         <section class="bg-right">
             <div class="hero-section section-right">
                 <h2 class="hero-title">Agung</h2>
-                <a
-                    aria-current="{segment === 'about' ? 'page' : undefined}"
-                    class="hero-nav"
-                    href="about"
-                ><h2>About</h2></a>
+                <a aria-current="about" class="hero-nav" href="about"><h2>
+                        About
+                    </h2></a>
             </div>
         </section>
     </div>
