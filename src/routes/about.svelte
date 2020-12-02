@@ -122,12 +122,12 @@
     <article class="about-me">
         <div class="about-me__content">
             <span class="waving-hand" on:click="{virtualShakeHand}">👋</span>
-            <p>
-                I'm a web developer ,photographer, and teacher based in
+            <p class="text">
+                I'm a web developer, photographer, and teacher based in
                 Indonesia (GMT +7). I love creating beautiful application and
                 solving complex tasks.
             </p>
-            <p>My current tools is:</p>
+            <p class="text">My current tools is:</p>
             <ul>
                 {#each stacks as stack}
                     <li>
@@ -140,7 +140,9 @@
                     </li>
                 {/each}
             </ul>
-            <p>Beside that I'm also work with other tech such as:</p>
+            <p class="text">
+                Beside that I'm also work with other tech such as:
+            </p>
             <ul>
                 {#each otherStacks as otherStack}
                     <li>
@@ -153,7 +155,7 @@
                     </li>
                 {/each}
             </ul>
-            <p>
+            <p class="text">
                 Currently I'm expanding my skill with
                 <a
                     href="https://aws.amazon.com/id/amplify/"
@@ -269,7 +271,8 @@
 
     .about-me {
         padding: 12px 16px;
-        font-family: "Martel", serif;
+        font-family: "Oswald", var(--default-text);
+        letter-spacing: 0.7px;
     }
 
     .about-me__content {
@@ -286,8 +289,14 @@
         animation: waveHand 3s ease-in-out infinite alternate;
     }
 
+    .text {
+        line-height: 1.344;
+        margin-bottom: 0;
+    }
+
     ul {
         list-style-type: none;
+        margin-top: 0.5em;
     }
 
     li {
@@ -394,8 +403,9 @@
     }
 
     @media only screen and (min-width: 640px) {
-        p {
+        .text {
             font-size: 20px;
+            line-height: 1.86667;
         }
     }
 </style>
