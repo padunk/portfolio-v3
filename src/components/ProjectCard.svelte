@@ -134,7 +134,7 @@
             class:noEllipsis
             bind:this="{projectStoryElement}"
         >
-            <p>{project.description}</p>
+            <p class="project-body__description">{project.description}</p>
             <p>{project.story}</p>
             <p>{project.challenge}</p>
             <ul class="tech-list">
@@ -214,6 +214,11 @@
 
     .noEllipsis {
         -webkit-line-clamp: unset;
+    }
+
+    .project-body__description {
+        color: var(--primary);
+        text-transform: uppercase;
     }
 
     .tech-list {
