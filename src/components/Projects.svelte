@@ -1,0 +1,51 @@
+<script lang="ts">
+    import { fade, fly } from "svelte/transition";
+    import ProjectCard from "./ProjectCard.svelte";
+    import projects from "../../src/projects.json";
+</script>
+
+<svelte:head>
+    <title>Abraham Anak Agung - Projects</title>
+</svelte:head>
+
+<div in:fly|local="{{ y: 2000, duration: 2000 }}" out:fade|local>
+    <h2 class="title">My Projects</h2>
+</div>
+
+<section class="projects" in:fly|local="{{ y: 2000, duration: 2000 }}">
+    {#each projects as project, i}
+        <ProjectCard project="{project}" index="{i}" />
+    {/each}
+</section>
+
+<style>
+    @font-face {
+        font-family: "AlienLeague Bold";
+        src: local("AlienLeagueBold"),
+            url("/fonts/AlienLeagueBold.otf") format("opentype");
+    }
+
+    .title {
+        font-family: "AlienLeague Bold", -apple-system, BlinkMacSystemFont,
+            "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+            "Helvetica Neue", sans-serif;
+        font-size: 56px;
+        text-align: center;
+    }
+
+    .projects {
+        padding-left: 8px;
+        padding-right: 8px;
+        padding-bottom: 24px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        row-gap: 16px;
+    }
+
+    @media only screen and (min-width: 720px) {
+        .projects {
+            row-gap: 32px;
+        }
+    }
+</style>
