@@ -382,3 +382,8 @@ template {
 .svg-icon:hover {
     fill: var(--tangerine-light-alpha-8);
 }
+
+h2 {
+    margin: 0;
+    padding: 0.83em 0;
+}
