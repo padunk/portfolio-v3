@@ -66,7 +66,7 @@
     });
 </script>
 
-<div class="hero" out:fade>
+<div class="hero" out:fade|local>
     <div class="moving-background">
         <section class="bg-left">
             <div class="hero-section section-left">
@@ -110,6 +110,12 @@
 
 <style>
     @font-face {
+        font-family: "AlienLeague Bold";
+        src: local("AlienLeagueBold"),
+            url("/fonts/AlienLeagueBold.otf") format("opentype");
+    }
+
+    @font-face {
         font-family: "AlienLeague Expanded";
         src: local("AlienLeagueExpanded"),
             url("/fonts/AlienLeagueExpanded.otf") format("opentype");
@@ -126,6 +132,7 @@
             "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
             "Helvetica Neue", sans-serif;
         margin: 0;
+        padding: 0;
         text-transform: uppercase;
     }
 
