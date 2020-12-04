@@ -1,0 +1,34 @@
+<svg
+    class="logo"
+    class:showMenu
+    xmlns="http://www.w3.org/2000/svg"
+    id="logo"
+    viewBox="0 0 15.875 15.875"
+    height="{size}"
+    width="{size}"
+    on:click="{toggleMenu}"
+>
+    <g transform="translate(0,-281.12498)" id="layer1">
+        <path
+            class="triangle"
+            id="triangle-1"
+            d="m 4.4837754,287.08484 1.716577,2.9732 1.7165771,2.9732 -3.4331542,0 -3.4331544,0 1.7165772,-2.9732 z"
+        ></path>
+        <path
+            class="triangle"
+            id="triangle-3"
+            d="m 11.367967,287.08484 1.716577,2.9732 1.716577,2.9732 -3.433154,0 -3.4331546,0 1.7165772,-2.9732 z"
+        ></path>
+        <path
+            class="triangle"
+            id="triangle-2"
+            d="m 7.9246976,281.13843 1.716577,2.9732 1.7165774,2.97319 -3.4331545,0 -3.4331543,0 1.7165772,-2.97319 z"
+        ></path>
+        <path
+            class="triangle triangle-center"
+            id="triangle-4"
+            d="m -7.9375,-293.03122 1.716577,2.9732 1.7165771,2.9732 -3.4331542,0 -3.4331539,0 1.7165767,-2.9732 z"
+            transform="scale(-1)"
+        ></path>
+    </g>
+</svg>
