@@ -45,6 +45,7 @@
         }
     };
 
+    // change 'construction' to 'photo' when photo page finished
     const useSegment = (location?: string) =>
         segment === location ? "photo" : location;
 </script>
@@ -74,7 +75,8 @@
                 d="m 16.67518,287.87858 1.716577,2.9732 1.716577,2.9732 -3.433154,0 -3.433155,0 1.716577,-2.9732 z"
             ></path>
         </a>
-        <a href="{useSegment('blog')}" class:cursorPointer>
+        <!-- change to blog when blog page finished -->
+        <a href="{useSegment('construction')}" class:cursorPointer>
             <path
                 class="triangle"
                 id="triangle-2"
