@@ -8,6 +8,7 @@
     import Twitter from "./Icons/Twitter.svelte";
     import Whatsapp from "./Icons/Whatsapp.svelte";
     import type { SocialMediaAccount } from "../utils/types";
+    import { onDestroy, onMount } from "svelte";
 
     const socMedAccounts: SocialMediaAccount[] = [
         {
@@ -107,13 +108,23 @@
         { name: "SASS", url: "https://sass-lang.com/" },
         { name: "Go", url: "https://golang.org" },
     ];
+
+    let aboutPage: HTMLDivElement;
+    const aboutTL = gsap.timeline();
+    onMount(() => {
+        aboutTL.from(aboutPage, {
+            x: 2000,
+            duration: 2,
+            autoAlpha: 0,
+        });
+    });
 </script>
 
 <svelte:head>
     <title>About</title>
 </svelte:head>
 
-<section>
+<section bind:this="{aboutPage}">
     <div>
         <h2 class="title">ABOUT <span class="title-name">ABRAHAM</span></h2>
     </div>
@@ -231,10 +242,8 @@
 </section>
 
 <style>
-    @font-face {
-        font-family: "AlienLeague Bold";
-        src: local("AlienLeagueBold"),
-            url("/fonts/AlienLeagueBold.otf") format("opentype");
+    section {
+        visibility: hidden;
     }
 
     .title {
