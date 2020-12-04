@@ -251,6 +251,8 @@
     .project-title a:link,
     .project-title a:visited {
         color: var(--tangerine-light-alpha-8);
+        font-family: "AlienLeague Bold", var(--default-text);
+        font-size: 24px;
     }
 
     .project-title a:hover,
@@ -337,6 +339,10 @@
 
         .project-media__container {
             left: 25%;
+        }
+
+        .tech-list {
+            font-size: 16px;
         }
     }
 </style>
