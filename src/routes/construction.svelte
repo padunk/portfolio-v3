@@ -15,6 +15,10 @@
 </p>
 
 <style>
+    h2 {
+        font-family: "AlienLeague Bold", var(--default-text);
+    }
+
     h2,
     p {
         text-align: center;
