@@ -1,11 +1,10 @@
 <script lang="ts">
-    import { fade } from "svelte/transition";
     import Logo from "./Icons/Logo.svelte";
     export let segment: string;
 </script>
 
 {#if segment}
-    <nav transition:fade>
+    <nav>
         <!-- <ul>
         <li>
             <a
