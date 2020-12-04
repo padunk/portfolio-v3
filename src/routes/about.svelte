@@ -3,6 +3,6 @@
     import PageTransition from "../components/PageTransition.svelte";
 </script>
 
-<PageTransition>
-    <About />
-</PageTransition>
+<!-- <PageTransition> -->
+<About />
+<!-- </PageTransition> -->
