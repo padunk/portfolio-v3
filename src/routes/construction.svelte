@@ -1,4 +1,4 @@
-<h2>Site is under contruction</h2>
+<h2>This page is under construction</h2>
 <div class="img-wrapper">
     <img
         src="/icons/undraw_under_construction_46pa.svg"
@@ -27,7 +27,7 @@
     .img-wrapper {
         display: flex;
         justify-content: center;
-        height: calc(100vh - 120px);
+        max-height: calc(100vh - 150px);
         width: 100vw;
     }
 
