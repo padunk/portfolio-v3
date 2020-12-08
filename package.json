@@ -12,10 +12,12 @@
     "dependencies": {
         "compression": "^1.7.1",
         "gsap": "^3.5.1",
+        "imagesloaded": "^4.1.4",
         "lodash.debounce": "^4.0.8",
         "pixi.js": "^5.3.3",
         "polka": "^0.5.2",
         "prettier": "^2.2.0",
+        "ramda": "^0.27.1",
         "sirv": "^1.0.0"
     },
     "devDependencies": {
@@ -33,9 +35,11 @@
         "@rollup/plugin-url": "^5.0.0",
         "@tsconfig/svelte": "^1.0.10",
         "@types/compression": "^1.7.0",
+        "@types/imagesloaded": "^4.1.2",
         "@types/lodash.debounce": "^4.0.6",
         "@types/node": "^14.11.1",
         "@types/polka": "^0.5.1",
+        "@types/ramda": "types/npm-ramda#dist",
         "prettier-plugin-svelte": "^1.4.1",
         "rollup": "^2.3.4",
         "rollup-plugin-svelte": "^6.0.0",
