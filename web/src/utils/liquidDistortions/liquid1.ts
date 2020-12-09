@@ -1,17 +1,18 @@
 import * as R from "ramda";
 import { gsap } from "gsap";
 import { DEFAULT_OPTIONS } from "../constants";
+import type { CanvasSliderOptions } from "../types";
 
-export function startSlideShow(options: any, PIXI: any) {
+export function startSlideShow(options: CanvasSliderOptions, PIXI: any) {
     const self = {} as any;
     const tween = gsap.timeline();
 
+    // @ts-ignore
     options = R.mergeDeepRight(DEFAULT_OPTIONS, options);
     options.displaceScaleTo = options.autoPlay === false ? [0, 0] : [20, 20];
 
     //  PIXI VARIABLES
     /// ---------------------------
-    // @ts-ignore
     const renderer = new PIXI.autoDetectRenderer({
         height: options.stageHeight,
         width: options.stageWidth,
@@ -19,7 +20,6 @@ export function startSlideShow(options: any, PIXI: any) {
     });
     const stage = new PIXI.Container();
     const slidesContainer = new PIXI.Container();
-    // @ts-ignore
     const displacementSprite = new PIXI.Sprite.from(options.displacementImage);
     const displacementFilter = new PIXI.filters.DisplacementFilter(
         displacementSprite

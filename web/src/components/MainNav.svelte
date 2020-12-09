@@ -91,7 +91,7 @@
                         class="hero-nav__link"
                         rel="prefetch"
                         aria-current="photo"
-                        href="construction"
+                        href="photo"
                     ><h2>Photo</h2></a>
                 </span>
             </div>

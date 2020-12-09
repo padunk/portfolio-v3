@@ -1,6 +1,8 @@
+import type { CanvasSliderOptions } from "./types";
+
 export const CARD_WIDTH: number = 312.5;
 
-export const DEFAULT_OPTIONS = Object.freeze({
+export const DEFAULT_OPTIONS: CanvasSliderOptions = Object.freeze({
     autoPlay: true,
     autoPlaySpeed: [10, 3],
     centerSprites: false,

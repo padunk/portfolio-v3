@@ -1,5 +1,8 @@
+# Mac files
 .DS_Store
-/node_modules/
-/src/node_modules/@sapper/
-yarn-error.log
-/__sapper__/
+
+# Dependency directories
+/node_modules
+
+# lerna files
+/lerna-debug.log

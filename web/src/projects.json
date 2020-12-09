@@ -1,0 +1,46 @@
+[
+    {
+        "title": "Our Whispers",
+        "description": "An application wouldn't complete without 'Stories'",
+        "story": "I create this application based on \"every app won't complete without stories\" thing. This app have basic feature of CRUD and it also had auth service with Firebase Auth.",
+        "challenge": "This app is still in progress since the main feature is not implemented yet, which is posting image and video and delete it after 24 hours.",
+        "tech": [
+            "ReactJS",
+            "Redux",
+            "TypeScript",
+            "Tailwind",
+            "Firebase",
+            "Formik",
+            "Yup",
+            "Express"
+        ],
+        "imgPath": "/images/our_whispers",
+        "imgType": "png",
+        "videoPath": "https://res.cloudinary.com/padunk/video/upload/v1590378827/my_portfolio/our_whispers_zojlu9.mp4",
+        "videoType": "mp4",
+        "alt": "our whispers app screenshot",
+        "url": "https://fade-to-black-f3f53.web.app/",
+        "color": "#8b5d3f"
+    },
+    {
+        "title": "Capchiq",
+        "description": "Only fans clone in React Native",
+        "story": "I made this app out of curiosity about OnlyFans site. OnlyFans didn't have a native based app but they go with PWA instead. So I just think why I don't clone one in React Native?",
+        "challenge": "Creating native application with RN is not easy. There is much boilerplate, unknown error, and third party package is needed especially for Video. RN doesn't have Video element (Expo does), so it is very challenging for me to get the video, upload it and show it on the timeline.",
+        "tech": [
+            "ReactJS",
+            "React Native",
+            "TypeScript",
+            "Formik",
+            "Yup",
+            "Firebase"
+        ],
+        "imgPath": "/images/capchiq",
+        "imgType": "png",
+        "videoPath": "https://res.cloudinary.com/padunk/video/upload/v1590378827/my_portfolio/capchiq_hmqn3b.mp4",
+        "videoType": "mp4",
+        "alt": "capchiq app screenshot",
+        "url": "#",
+        "color": "#ac95eb"
+    }
+]
