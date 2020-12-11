@@ -1,1 +1,0 @@
-# sanity-sapper-blog-studio

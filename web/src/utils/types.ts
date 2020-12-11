@@ -42,3 +42,49 @@ export type CanvasSliderOptions = {
     texts?: string[];
     wacky?: boolean;
 };
+
+interface SanityBasic {
+    _ref: string;
+    _type: string;
+}
+
+interface Author {
+    _key: string;
+    _type: string;
+    author: SanityBasic;
+}
+
+interface Body extends SanityBasic {
+    alt: string;
+    asset: any;
+    caption: string;
+    children: [];
+    code?: string;
+    language?: string;
+    listItem: string;
+    markDefs?: [];
+    style?: string;
+    level?: number;
+}
+
+interface Category extends SanityBasic {
+    _key: string;
+}
+
+type MainImage = {
+    _type: string;
+    alt: string;
+    asset: any;
+    caption: string;
+};
+
+export type BlogPost = {
+    authors: any;
+    body: any;
+    categories: any;
+    excerpt: any;
+    mainImage: any;
+    publishedAt: string;
+    slug: any;
+    title: string;
+};

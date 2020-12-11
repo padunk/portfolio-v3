@@ -1,64 +1,92 @@
 <script context="module" lang="ts">
-	export async function preload({ params }) {
-		// the `slug` parameter is available because
-		// this file is called [slug].svelte
-		const res = await this.fetch(`blog/${params.slug}.json`);
-		const data = await res.json();
+    import client from "../../sanityClient";
+    import BlockContent from "@movingbrands/svelte-portable-text";
+    import serializers from "../../utils/serializers";
 
-		if (res.status === 200) {
-			return { post: data };
-		} else {
-			this.error(res.status, data.message);
+    export async function preload({ params }) {
+        // the `slug` parameter is available because
+        // this file is called [slug].html
+        const { slug } = params;
+        const filter = '*[_type == "post" && slug.current == $slug][0]';
+        const projection = `{
+		...,
+		body[]{
+		  ...,
+		  children[]{
+			...,
+			_type == 'authorReference' => {
+			  _type,
+			  author->
+			}
+		  }
 		}
-	}
+	  }`;
+
+        const query = filter + projection;
+        const post = await client
+            .fetch(query, { slug })
+            .catch((err) => this.error(500, err));
+        console.log(post);
+        return { post };
+    }
 </script>
 
 <script lang="ts">
-	export let post: { slug: string; title: string, html: any };
+    export let post: any;
 </script>
 
-<style>
-	/*
-		By default, CSS is locally scoped to the component,
-		and any unused styles are dead-code-eliminated.
-		In this page, Svelte can't know which elements are
-		going to appear inside the {{{post.html}}} block,
-		so we have to use the :global(...) modifier to target
-		all elements inside .content
-	*/
-	.content :global(h2) {
-		font-size: 1.4em;
-		font-weight: 500;
-	}
-
-	.content :global(pre) {
-		background-color: #f9f9f9;
-		box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.05);
-		padding: 0.5em;
-		border-radius: 2px;
-		overflow-x: auto;
-	}
-
-	.content :global(pre) :global(code) {
-		background-color: transparent;
-		padding: 0;
-	}
-
-	.content :global(ul) {
-		line-height: 1.5;
-	}
-
-	.content :global(li) {
-		margin: 0 0 0.5em 0;
-	}
-</style>
-
 <svelte:head>
-	<title>{post.title}</title>
+    <title>{post.title}</title>
 </svelte:head>
 
-<h1>{post.title}</h1>
-
 <div class="content">
-	{@html post.html}
+    <h2>{post.title}</h2>
+    <article class="article">
+        <BlockContent blocks="{post.body}" serializers="{serializers}" />
+    </article>
 </div>
+
+<style>
+    .content {
+        position: relative;
+        margin: 0 auto;
+        margin-top: 120px;
+        max-width: 80ch;
+        overflow: hidden;
+    }
+
+    h2 {
+        font-size: 56px;
+        font-family: "AlienLeague Bold", var(--default-text);
+        padding: 0;
+        text-align: center;
+    }
+
+    .article :global(p) {
+        font-family: "Domine", var(--default-text);
+        font-size: 18px;
+    }
+
+    .article :global(a:link, a:visited) {
+        color: var(--secondary);
+        transition: color 250ms ease-in-out;
+    }
+
+    .article :global(a:hover, a:active) {
+        color: var(--tangerine);
+    }
+
+    .article :global(p:first-child::first-letter) {
+        font-size: 32px;
+    }
+
+    .article {
+        padding: 12px;
+    }
+
+    .article :global(img) {
+        display: block;
+        max-width: 100%;
+        object-fit: cover;
+    }
+</style>

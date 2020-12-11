@@ -1,34 +1,80 @@
 <script context="module" lang="ts">
-	export function preload() {
-		return this.fetch(`blog.json`).then((r: { json: () => any; }) => r.json()).then((posts: { slug: string; title: string, html: any }[]) => {
-			return { posts };
-		});
-	}
+    import client from "../../sanityClient";
+
+    export function preload({ params, query }) {
+        // TODO: pagination?
+
+        return client
+            .fetch(
+                `*[_type == "post" && defined(slug.current) && publishedAt < now()] | order(publishedAt desc) {
+                    body,
+                    publishedAt,
+                    slug,
+                    title,
+                    excerpt,
+                    "categoryList": categories[]->title,
+                    "cover": {
+                        "src": mainImage.asset->url,
+                        "alt": mainImage.alt,
+                        "caption": mainImage.caption
+                    },
+                    "authorList": authors[]{
+                        "name": author->name,
+                        "src": author->image.asset->url,
+                        "alt": author->image.alt
+                    }
+                }[0...20]`
+            )
+            .then((posts) => {
+                return { posts };
+            })
+            .catch((err) => this.error(500, err));
+    }
 </script>
 
 <script lang="ts">
-	export let posts: { slug: string; title: string, html: any }[];
+    import Blogs from "../../components/Blogs.svelte";
+
+    export let posts: {
+        authors: any;
+        body: any;
+        categories: any;
+        excerpt: any;
+        mainImage: any;
+        publishedAt: string;
+        slug: any;
+        title: string;
+    }[];
 </script>
 
-<style>
-	ul {
-		margin: 0 0 1em 0;
-		line-height: 1.5;
-	}
-</style>
-
 <svelte:head>
-	<title>Blog</title>
+    <title>Blog</title>
 </svelte:head>
 
-<h1>Recent BLOGS</h1>
+<section class="blog">
+    <h2>Recent BLOGS</h2>
+    <Blogs posts="{posts}" />
+</section>
 
-<ul>
-	{#each posts as post}
-		<!-- we're using the non-standard `rel=prefetch` attribute to
-				tell Sapper to load the data for the page as soon as
-				the user hovers over the link or taps it, instead of
-				waiting for the 'click' event -->
-		<li><a rel="prefetch" href="blog/{post.slug}">{post.title}</a></li>
-	{/each}
-</ul>
+<style>
+    .blog {
+        margin-top: 120px;
+    }
+
+    h2 {
+        font-family: "AlienLeague Bold", var(--default-text);
+        font-size: 56px;
+        text-align: center;
+        padding: 0;
+    }
+
+    @media only screen and (min-width: 600px) {
+        .blog {
+            margin-top: 0;
+        }
+
+        h2 {
+            padding: 0.83em 0;
+        }
+    }
+</style>
