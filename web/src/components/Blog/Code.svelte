@@ -1,32 +1,44 @@
-<script>
-    export let code;
-    export let language;
+<script lang="ts">
+    import { afterUpdate, tick } from "svelte";
+    import Prism from "../../utils/prism";
+
+    export let code: string;
+    export let language: string;
+
+    afterUpdate(async () => {
+        await tick();
+        Prism.highlightAll();
+    });
 </script>
 
-<pre data-language="{language}">
-    <code>{code}</code>
+<pre data-language="{language}" class="language-{language}">
+    <code
+        class="language-{language}"
+    >
+        {code}
+    </code>
 </pre>
 
 <style>
     pre {
-        background-color: #f9f9f9;
-        box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.05);
-        padding: 0.5em;
-        border-radius: 2px;
-        overflow-x: auto;
         position: relative;
     }
-    code {
-        background: none;
-    }
+
     [data-language]:after {
         content: attr(data-language);
         top: 0;
         position: absolute;
         right: 0;
-        background: #ff3e00;
-        color: #fff;
+        background: var(--tangerine);
+        color: #2d2d2d;
         padding: 2px;
         border-radius: 2px;
+        display: none;
+    }
+
+    @media only screen and (min-width: 450px) {
+        [data-language]:after {
+            display: block;
+        }
     }
 </style>
