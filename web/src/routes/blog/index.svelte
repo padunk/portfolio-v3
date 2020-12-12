@@ -33,7 +33,7 @@
 </script>
 
 <script lang="ts">
-    import Blogs from "../../components/Blogs.svelte";
+    import Blog from "../../components/Blog/";
 
     export let posts: {
         authors: any;
@@ -53,7 +53,7 @@
 
 <section class="blog">
     <h2>Recent BLOGS</h2>
-    <Blogs posts="{posts}" />
+    <Blog posts="{posts}" />
 </section>
 
 <style>
