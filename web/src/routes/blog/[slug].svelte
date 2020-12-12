@@ -67,15 +67,6 @@
         font-size: 18px;
     }
 
-    .article :global(a:link, a:visited) {
-        color: var(--secondary);
-        transition: color 250ms ease-in-out;
-    }
-
-    .article :global(a:hover, a:active) {
-        color: var(--tangerine);
-    }
-
     .article :global(p:first-child::first-letter) {
         font-size: 32px;
     }
@@ -84,9 +75,13 @@
         padding: 12px;
     }
 
-    .article :global(img) {
-        display: block;
-        max-width: 100%;
-        object-fit: cover;
+    @media only screen and (min-width: 600px) {
+        .content {
+            margin-top: 0;
+        }
+
+        h2 {
+            margin: 0.83em 0;
+        }
     }
 </style>
