@@ -18,6 +18,7 @@
         const options = {
             month: "short",
             day: "numeric",
+            year: "numeric",
         };
         return new Intl.DateTimeFormat("default", options).format(
             new Date(date)
@@ -70,11 +71,12 @@
     }
 
     li {
-        background: var(--tangerine);
         padding: 20px;
         max-width: 700px;
         margin: 0 auto;
         position: relative;
+        border: 2px solid var(--tangerine);
+        color: var(--tangerine);
         /* clip-path: polygon(0 0, 100% 0, 100% 60%, 84% 100%, 0 100%); */
     }
 
@@ -87,6 +89,7 @@
         height: 50px;
         width: 50px;
         transform: rotate(45deg) translate(71%, 0%);
+        border-left: 2px solid var(--tangerine);
     }
 
     p {
@@ -96,7 +99,7 @@
 
     .blog-link:link,
     .blog-link:visited {
-        color: var(--primary);
+        color: var(--tangerine);
         transition: color 250ms ease-in-out;
     }
 
