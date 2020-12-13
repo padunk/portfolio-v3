@@ -1245,14 +1245,9 @@
   version "1.0.0-beta.3"
   resolved "https://registry.npmjs.org/@sanity/icons/-/icons-1.0.0-beta.3.tgz#d08afd3fc40e30e344aee598f5ef881ff0207f89"
 
-"@sanity/icons@^1.0.0-beta.3":
+"@sanity/icons@^1.0.0-beta.3", "@sanity/icons@^1.0.0-beta.4":
   version "1.0.0-beta.4"
   resolved "https://registry.npmjs.org/@sanity/icons/-/icons-1.0.0-beta.4.tgz#5f4631f0575a35252d985eff4574eaba799f2b19"
-
-"@sanity/icons@^1.0.0-beta.4":
-  version "1.0.0-beta.4"
-  resolved "https://registry.yarnpkg.com/@sanity/icons/-/icons-1.0.0-beta.4.tgz#5f4631f0575a35252d985eff4574eaba799f2b19"
-  integrity sha512-GiW5vV9/Zp/pjQQp1tSGY/h83zS5AjKc2y1FJuo4zX6CjjhyJ0fqi1ceKiIMVIgfYAuoYQuqvlMOxl8ebZGbRA==
 
 "@sanity/image-url@^0.140.19":
   version "0.140.19"
@@ -3054,7 +3049,8 @@ dataloader@^2.0.0:
 
 date-fns@^2.16.1:
   version "2.16.1"
-  resolved "https://registry.npmjs.org/date-fns/-/date-fns-2.16.1.tgz#05775792c3f3331da812af253e1a935851d3834b"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.16.1.tgz#05775792c3f3331da812af253e1a935851d3834b"
+  integrity sha512-sAJVKx/FqrLYHAQeN7VpJrPhagZc9R4ImZIWYRFZaaohR3KzmuK88touwsSwSVT8Qcbd4zoDsnGfX4GFB4imyQ==
 
 date-now@1.0.1:
   version "1.0.1"
