@@ -12,6 +12,7 @@
                     slug,
                     title,
                     excerpt,
+                    _createdAt,
                     "categoryList": categories[]->title,
                     "cover": {
                         "src": mainImage.asset->url,
@@ -33,18 +34,9 @@
 </script>
 
 <script lang="ts">
-    import Blog from "../../components/Blog/";
+    import Blog from "../../components/Blog/index.svelte";
 
-    export let posts: {
-        authors: any;
-        body: any;
-        categories: any;
-        excerpt: any;
-        mainImage: any;
-        publishedAt: string;
-        slug: any;
-        title: string;
-    }[];
+    export let posts: any;
 </script>
 
 <svelte:head>
