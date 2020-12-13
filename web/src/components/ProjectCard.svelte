@@ -209,7 +209,7 @@
         /* text-align: justify; */
         line-height: 1.48;
         font-size: 16px;
-        font-family: "Domine", var(--default-text);
+        font-family: "Laila", var(--default-text);
     }
 
     .noEllipsis {

@@ -26,7 +26,6 @@
         const post = await client
             .fetch(query, { slug })
             .catch((err) => this.error(500, err));
-        console.log(post);
         return { post };
     }
 </script>
@@ -51,7 +50,7 @@
         position: relative;
         margin: 0 auto;
         margin-top: 120px;
-        max-width: 80ch;
+        max-width: 70ch;
         overflow: hidden;
     }
 
@@ -62,9 +61,14 @@
         text-align: center;
     }
 
+    .article {
+        font-family: "Oswald", var(--default-text);
+    }
+
     .article :global(p) {
-        font-family: "Domine", var(--default-text);
+        font-family: "Laila", var(--default-text);
         font-size: 18px;
+        line-height: 1.6;
     }
 
     .article :global(p:first-child::first-letter) {
