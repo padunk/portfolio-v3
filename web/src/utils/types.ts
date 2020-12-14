@@ -1,8 +1,11 @@
+import type { SvelteComponentDev } from "svelte/internal";
+
 export type SocialMediaAccount = {
     name: string;
     href: string;
     size: number;
     className?: string;
+    component: typeof SvelteComponentDev;
 };
 
 export type ProjectDetail = {

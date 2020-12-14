@@ -1,4 +1,11 @@
 import type { CanvasSliderOptions, SocialMediaAccount, Stacks } from "./types";
+import Github from "../components/Icons/Github.svelte";
+import Codepen from "../components/Icons/Codepen.svelte";
+import Linkedin from "../components/Icons/Linkedin.svelte";
+import Twitter from "../components/Icons/Twitter.svelte";
+import Instagram from "../components/Icons/Instagram.svelte";
+import Whatsapp from "../components/Icons/Whatsapp.svelte";
+import Mail from "../components/Icons/Mail.svelte";
 
 export const CARD_WIDTH: number = 312.5;
 
@@ -71,30 +78,35 @@ export const SOCMED_ACCOUNTS: SocialMediaAccount[] = [
         href: "https://github.com/padunk",
         size: 24,
         className: "svg-icon",
+        component: Github,
     },
     {
         name: "Codepen",
         href: "https://codepen.io/padunk",
         size: 24,
         className: "svg-icon",
+        component: Codepen,
     },
     {
         name: "Linkedin",
         href: "https://linkedin.com/in/abrahamanakagung",
         size: 24,
         className: "svg-icon",
+        component: Linkedin,
     },
     {
         name: "Twitter",
         href: "https://twitter.com/anakagungcorp",
         size: 24,
         className: "svg-icon",
+        component: Twitter,
     },
     {
         name: "Instagram",
         href: "https://instagram.com/gocodecourse",
         size: 24,
         className: "svg-icon",
+        component: Instagram,
     },
     {
         name: "Whatsapp",
@@ -102,12 +114,14 @@ export const SOCMED_ACCOUNTS: SocialMediaAccount[] = [
             "https://wa.me/6282169879998/?text=Hi,%20I%20like%20to%20hire%20you.",
         size: 24,
         className: "svg-icon",
+        component: Whatsapp,
     },
     {
         name: "Email",
         href: "mailto:abraham.anak.agung@gmail.com",
         size: 24,
         className: "svg-icon",
+        component: Mail,
     },
 ];
 

@@ -7,54 +7,8 @@
     import Mail from "./Icons/Mail.svelte";
     import Twitter from "./Icons/Twitter.svelte";
     import Whatsapp from "./Icons/Whatsapp.svelte";
-    import type { SocialMediaAccount } from "../utils/types";
-    import { onDestroy, onMount } from "svelte";
-
-    const socMedAccounts: SocialMediaAccount[] = [
-        {
-            name: "Github",
-            href: "https://github.com/padunk",
-            size: 24,
-            className: "svg-icon",
-        },
-        {
-            name: "Codepen",
-            href: "https://codepen.io/padunk",
-            size: 24,
-            className: "svg-icon",
-        },
-        {
-            name: "Linkedin",
-            href: "https://linkedin.com/in/abrahamanakagung",
-            size: 24,
-            className: "svg-icon",
-        },
-        {
-            name: "Twitter",
-            href: "https://twitter.com/anakagungcorp",
-            size: 24,
-            className: "svg-icon",
-        },
-        {
-            name: "Instagram",
-            href: "https://instagram.com/gocodecourse",
-            size: 24,
-            className: "svg-icon",
-        },
-        {
-            name: "Whatsapp",
-            href:
-                "https://wa.me/6282169879998/?text=Hi,%20I%20like%20to%20hire%20you.",
-            size: 24,
-            className: "svg-icon",
-        },
-        {
-            name: "Email",
-            href: "mailto:abraham.anak.agung@gmail.com",
-            size: 24,
-            className: "svg-icon",
-        },
-    ];
+    import { onMount } from "svelte";
+    import { OTHER_STACKS, SOCMED_ACCOUNTS, STACKS } from "../utils/constants";
 
     let hide: boolean = true;
     const tl = gsap.timeline();
@@ -90,25 +44,6 @@
         }, 2000);
     };
 
-    const stacks = [
-        { name: "ReactJS", url: "https://reactjs.org/" },
-        { name: "ReactNative", url: "https://reactnative.dev/" },
-        { name: "Redux", url: "https://redux.js.org/" },
-        { name: "TypeScript", url: "https://www.typescriptlang.org/" },
-        { name: "Firebase", url: "https://firebase.google.com" },
-        { name: "TailwindCSS", url: "https://tailwindcss.com" },
-        { name: "Styled Components", url: "https://styled-components.com" },
-        { name: "NodeJS", url: "https://nodejs.org/en/" },
-    ];
-
-    const otherStacks = [
-        { name: "Svelte", url: "https://svelte.dev" },
-        { name: "PostgreSQL", url: "https://www.postgresql.org/" },
-        { name: "MongoDB", url: "https://mongodb.com" },
-        { name: "SASS", url: "https://sass-lang.com/" },
-        { name: "Go", url: "https://golang.org" },
-    ];
-
     let aboutPage: HTMLDivElement;
     const aboutTL = gsap.timeline();
     onMount(() => {
@@ -131,7 +66,18 @@
     <div class="shake-hand" class:hide>&#x1F91D;</div>
     <article class="about-me">
         <div class="about-me__content">
-            <span class="waving-hand" on:click="{virtualShakeHand}">👋</span>
+            <div class="flex-horizontal">
+                <span
+                    class="waving-hand"
+                    on:click="{virtualShakeHand}"
+                >👋</span>
+                <div class="image-wrapper">
+                    <img
+                        src="/images/profile_picture.jpg"
+                        alt="a handsome man name abraham with white shirt"
+                    />
+                </div>
+            </div>
             <p class="text">
                 I'm a web developer, photographer, and teacher based in
                 Indonesia (GMT +7). I love creating beautiful application and
@@ -139,7 +85,7 @@
             </p>
             <p class="text">My current tools is:</p>
             <ul>
-                {#each stacks as stack}
+                {#each STACKS as stack}
                     <li>
                         <a
                             class="stack-link"
@@ -154,7 +100,7 @@
                 Beside that I'm also work with other tech such as:
             </p>
             <ul>
-                {#each otherStacks as otherStack}
+                {#each OTHER_STACKS as otherStack}
                     <li>
                         <a
                             class="stack-link"
@@ -190,7 +136,7 @@
     </h3>
     <div class="social-media">
         <ul class="social-media__lists">
-            {#each socMedAccounts as account}
+            {#each SOCMED_ACCOUNTS as account}
                 <li>
                     <a
                         href="{account.href}"
@@ -198,42 +144,11 @@
                         target="_blank"
                         class="social-media__link"
                     >
-                        {#if account.name === 'Github'}
-                            <Github
-                                size="{account.size}"
-                                className="{account.className}"
-                            />
-                        {:else if account.name === 'Codepen'}
-                            <Codepen
-                                size="{account.size}"
-                                className="{account.className}"
-                            />
-                        {:else if account.name === 'Linkedin'}
-                            <Linkedin
-                                size="{account.size}"
-                                className="{account.className}"
-                            />
-                        {:else if account.name === 'Twitter'}
-                            <Twitter
-                                size="{account.size}"
-                                className="{account.className}"
-                            />
-                        {:else if account.name === 'Instagram'}
-                            <Instagram
-                                size="{account.size}"
-                                className="{account.className}"
-                            />
-                        {:else if account.name === 'Email'}
-                            <Mail
-                                size="{account.size}"
-                                className="{account.className}"
-                            />
-                        {:else}
-                            <Whatsapp
-                                size="{account.size}"
-                                className="{account.className}"
-                            />
-                        {/if}
+                        <svelte:component
+                            this="{account.component}"
+                            size="{account.size}"
+                            className="{account.className}"
+                        />
                     </a>
                 </li>
             {/each}
@@ -254,6 +169,27 @@
 
     .title-name {
         color: var(--tertiary);
+    }
+
+    .flex-horizontal {
+        display: flex;
+        align-items: center;
+        column-gap: 24px;
+    }
+
+    .image-wrapper {
+        width: 48px;
+        height: 48px;
+        border-radius: 9999px;
+        border: 1px solid transparent;
+        box-shadow: 0 0 0 2px var(--tangerine);
+        overflow: hidden;
+    }
+
+    .image-wrapper > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     .shake-hand {
@@ -354,7 +290,7 @@
     }
 
     .social-media {
-        margin-bottom: 4em;
+        padding-bottom: 4em;
     }
 
     .social-media__title {
