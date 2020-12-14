@@ -2,6 +2,8 @@
     import { gsap } from "gsap";
 
     export let segment: string;
+    export let handleMouseEnter: any;
+    export let handleMouseLeave: any;
     let showMenu: boolean = false;
     let cursorPointer: boolean = false;
 
@@ -47,7 +49,7 @@
 
     // change 'construction' to 'photo' when photo page finished
     const useSegment = (location?: string) =>
-        segment === location ? "photo" : location;
+        segment === location ? "construction" : location;
 </script>
 
 <svg
@@ -61,29 +63,48 @@
     on:click="{toggleMenu}"
 >
     <g transform="translate(0,-275.83331)" id="layer1">
-        <a href="{useSegment('projects')}" class:cursorPointer>
+        <a
+            href="{useSegment('projects')}"
+            class:cursorPointer
+            on:mouseenter="{handleMouseEnter}"
+            on:mouseleave="{handleMouseLeave}"
+        >
             <path
                 class="triangle"
                 id="triangle-1"
                 d="m 9.796013,287.87857 1.716577,2.9732 1.716577,2.9732 -3.4331541,0 -3.4331544,0 1.7165772,-2.9732 z"
             ></path>
         </a>
-        <a href="{useSegment('about')}" class:cursorPointer>
+        <a
+            href="{useSegment('about')}"
+            class:cursorPointer
+            on:mouseenter="{handleMouseEnter}"
+            on:mouseleave="{handleMouseLeave}"
+        >
             <path
                 class="triangle"
                 id="triangle-3"
                 d="m 16.67518,287.87858 1.716577,2.9732 1.716577,2.9732 -3.433154,0 -3.433155,0 1.716577,-2.9732 z"
             ></path>
         </a>
-        <!-- change to blog when blog page finished -->
-        <a href="{useSegment('construction')}" class:cursorPointer>
+        <a
+            href="{useSegment('blog')}"
+            class:cursorPointer
+            on:mouseenter="{handleMouseEnter}"
+            on:mouseleave="{handleMouseLeave}"
+        >
             <path
                 class="triangle"
                 id="triangle-2"
                 d="m 13.216364,281.93219 1.716577,2.9732 1.716577,2.9732 -3.433154,0 -3.4331544,0 1.7165774,-2.9732 z"
             ></path>
         </a>
-        <a href="{useSegment('.')}" class:cursorPointer>
+        <a
+            href="{useSegment('.')}"
+            class:cursorPointer
+            on:mouseenter="{handleMouseEnter}"
+            on:mouseleave="{handleMouseLeave}"
+        >
             <path
                 class="triangle triangle-center"
                 id="triangle-4"
