@@ -2,8 +2,14 @@
     import { gsap } from "gsap";
 
     export let segment: string;
-    export let handleMouseEnter: any;
-    export let handleMouseLeave: any;
+    export let handleMouseEnter: svelte.JSX.EventHandler<
+        MouseEvent,
+        HTMLAnchorElement
+    >;
+    export let handleMouseLeave: svelte.JSX.EventHandler<
+        MouseEvent,
+        HTMLAnchorElement
+    >;
     let showMenu: boolean = false;
     let cursorPointer: boolean = false;
 

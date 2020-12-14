@@ -1,18 +1,38 @@
 <script lang="ts">
+    import { gsap } from "gsap";
+    import { TextPlugin } from "gsap/TextPlugin";
     import Logo from "./Icons/Logo.svelte";
     export let segment: string;
 
     let hoverPath: string = "";
 
-    const handleMouseEnter = (event) => {
-        hoverPath =
-            event.target.getAttribute("href") === "."
-                ? "home"
-                : event.target.getAttribute("href");
+    gsap.registerPlugin(TextPlugin);
+    const tl = gsap.timeline();
+
+    const handleMouseEnter = (event: any) => {
+        switch (event.target.getAttribute("href")) {
+            case ".":
+                tl.to(".hover-path", {
+                    text: "home",
+                });
+                break;
+            // change to photo if photo page is finished
+            case "construction":
+                tl.to(".hover-path", {
+                    text: "photo",
+                });
+                break;
+            default:
+                tl.to(".hover-path", {
+                    text: event.target.getAttribute("href"),
+                });
+        }
     };
 
     const handleMouseLeave = () => {
-        hoverPath = "";
+        tl.to(".hover-path", {
+            text: "",
+        });
     };
 </script>
 
