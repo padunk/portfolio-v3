@@ -1,4 +1,4 @@
-import type { CanvasSliderOptions } from "./types";
+import type { CanvasSliderOptions, SocialMediaAccount, Stacks } from "./types";
 
 export const CARD_WIDTH: number = 312.5;
 
@@ -64,3 +64,68 @@ export const DISPLACEMENT_IMAGE = {
         ripple_2: "/images/dmaps/2048x2048/ripple_2.jpg",
     },
 };
+
+export const SOCMED_ACCOUNTS: SocialMediaAccount[] = [
+    {
+        name: "Github",
+        href: "https://github.com/padunk",
+        size: 24,
+        className: "svg-icon",
+    },
+    {
+        name: "Codepen",
+        href: "https://codepen.io/padunk",
+        size: 24,
+        className: "svg-icon",
+    },
+    {
+        name: "Linkedin",
+        href: "https://linkedin.com/in/abrahamanakagung",
+        size: 24,
+        className: "svg-icon",
+    },
+    {
+        name: "Twitter",
+        href: "https://twitter.com/anakagungcorp",
+        size: 24,
+        className: "svg-icon",
+    },
+    {
+        name: "Instagram",
+        href: "https://instagram.com/gocodecourse",
+        size: 24,
+        className: "svg-icon",
+    },
+    {
+        name: "Whatsapp",
+        href:
+            "https://wa.me/6282169879998/?text=Hi,%20I%20like%20to%20hire%20you.",
+        size: 24,
+        className: "svg-icon",
+    },
+    {
+        name: "Email",
+        href: "mailto:abraham.anak.agung@gmail.com",
+        size: 24,
+        className: "svg-icon",
+    },
+];
+
+export const STACKS: Stacks[] = [
+    { name: "ReactJS", url: "https://reactjs.org/" },
+    { name: "ReactNative", url: "https://reactnative.dev/" },
+    { name: "Redux", url: "https://redux.js.org/" },
+    { name: "TypeScript", url: "https://www.typescriptlang.org/" },
+    { name: "Firebase", url: "https://firebase.google.com" },
+    { name: "TailwindCSS", url: "https://tailwindcss.com" },
+    { name: "Styled Components", url: "https://styled-components.com" },
+    { name: "NodeJS", url: "https://nodejs.org/en/" },
+];
+
+export const OTHER_STACKS: Stacks[] = [
+    { name: "Svelte", url: "https://svelte.dev" },
+    { name: "PostgreSQL", url: "https://www.postgresql.org/" },
+    { name: "MongoDB", url: "https://mongodb.com" },
+    { name: "SASS", url: "https://sass-lang.com/" },
+    { name: "Go", url: "https://golang.org" },
+];

@@ -43,6 +43,11 @@ export type CanvasSliderOptions = {
     wacky?: boolean;
 };
 
+export type Stacks = {
+    name: string;
+    url: string;
+};
+
 interface SanityBasic {
     _ref: string;
     _type: string;
