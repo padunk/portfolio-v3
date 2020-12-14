@@ -208,7 +208,7 @@
             transparent,
             var(--shadow-black-4)
         );
-        backdrop-filter: blur(45px);
+        backdrop-filter: blur(15px);
         transform: scale(5);
         z-index: 1;
     }
