@@ -85,13 +85,14 @@
                         class="hero-nav__link"
                         rel="prefetch"
                         aria-current="blog"
-                        href="construction"
+                        href="blog"
                     ><h2>Blog</h2></a>
+                    <!-- change BELOW href to photo when photo site finished -->
                     <a
                         class="hero-nav__link"
                         rel="prefetch"
                         aria-current="photo"
-                        href="photo"
+                        href="construction"
                     ><h2>Photo</h2></a>
                 </span>
             </div>
