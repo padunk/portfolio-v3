@@ -1,6 +1,7 @@
 :root {
     --primary: hsl(260, 47%, 27%);
     --primary-light: hsl(265, 21%, 53%);
+    --primary-light-alpha-6: hsla(265, 21%, 53%, 0.6);
     --secondary: hsl(328, 53%, 69%);
     --secondary-bright: hsl(328, 78%, 54%);
     --tertiary: hsl(194, 98%, 44%);
@@ -15,6 +16,7 @@
     --shadow-black-2: rgba(0, 0, 0, 0.2);
     --shadow-black-4: rgba(0, 0, 0, 0.4);
     --px: 4px;
+    --animation-back: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
