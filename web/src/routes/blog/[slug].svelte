@@ -19,18 +19,27 @@
 			  author->
 			}
 		  }
-		}
+		},
+        "authorList": authors[].author->name,
+        "coverImage": {
+            "alt": mainImage.alt,
+            "caption": mainImage.caption,
+            "url": mainImage.asset->url
+        }
 	  }`;
 
         const query = filter + projection;
         const post = await client
             .fetch(query, { slug })
             .catch((err) => this.error(500, err));
+        console.log(post);
         return { post };
     }
 </script>
 
 <script lang="ts">
+    import Image from "../../components/Blog/Image.svelte";
+
     export let post: any;
 </script>
 
@@ -39,8 +48,15 @@
 </svelte:head>
 
 <div class="content">
-    <h2>{post.title}</h2>
+    <div class="title-author">
+        <h2>{post.title}</h2>
+        <p>By: {post.authorList.join(', ')}</p>
+    </div>
     <article class="article">
+        <figure class="image-wrapper">
+            <Image url="{post.coverImage.url}" alt="{post.coverImage.alt}" />
+            <figcaption>{post.coverImage.caption}</figcaption>
+        </figure>
         <BlockContent blocks="{post.body}" serializers="{serializers}" />
     </article>
 </div>
@@ -49,9 +65,15 @@
     .content {
         position: relative;
         margin: 0 auto;
-        margin-top: 120px;
-        max-width: 70ch;
+        /* max-width: 70ch; */
         overflow: hidden;
+    }
+
+    .title-author {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     h2 {
@@ -64,10 +86,26 @@
     .article {
         padding: 12px;
         font-family: "Laila", var(--default-text);
+        display: grid;
+        grid-template-columns: 1fr minmax(30ch, 70ch) 1fr;
     }
 
     .article :global(h1, h2, h3, h4, h5, h6) {
         font-family: "Oswald", var(--default-text);
+    }
+
+    .article :global(*) {
+        grid-column: 2 / 3;
+    }
+
+    .article :global(figure) {
+        grid-column: 1 / -1;
+        margin: 0;
+    }
+
+    .article :global(figcaption) {
+        padding: 8px 0;
+        font-style: italic;
     }
 
     .article :global(p) {
@@ -80,12 +118,8 @@
     }
 
     @media only screen and (min-width: 600px) {
-        .content {
-            margin-top: 0;
-        }
-
         h2 {
-            margin: 0.83em 0;
+            margin-top: 0.83em;
         }
     }
 </style>
