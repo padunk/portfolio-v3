@@ -54,26 +54,42 @@
         max-width: 700px;
         justify-content: center;
         column-gap: 24px;
-        font-family: "Oswald";
+        font-family: "Oswald", var(--default-text);
         line-height: 2;
         margin: auto;
     }
 
-    .static-link:link,
-    .static-link:visited {
+    .static-link {
+        position: relative;
         display: block;
         font-size: 24px;
         flex-basis: 150px;
         text-align: center;
-        box-shadow: 0px 0px 0px 2px black;
+        border: 2px solid var(--tangerine);
+    }
+
+    .static-link:link,
+    .static-link:visited {
         color: var(--primary-light);
         transition: all 200ms;
-        transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+        transition-timing-function: var(--animation-back);
     }
 
     .static-link:hover,
     .static-link:active {
         color: var(--tangerine);
-        background-color: hsla(265, 21%, 53%, 0.6);
+        background-color: var(--primary-light-alpha-6);
+    }
+
+    .static-link:after {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 25px;
+        height: 25px;
+        border-left: 2px solid var(--tangerine);
+        transform: rotate(45deg) translate(75%, -3%);
+        background-color: var(--primary);
     }
 </style>

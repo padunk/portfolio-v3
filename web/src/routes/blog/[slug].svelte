@@ -62,21 +62,21 @@
     }
 
     .article {
+        padding: 12px;
+        font-family: "Laila", var(--default-text);
+    }
+
+    .article :global(h1, h2, h3, h4, h5, h6) {
         font-family: "Oswald", var(--default-text);
     }
 
     .article :global(p) {
-        font-family: "Laila", var(--default-text);
         font-size: 18px;
         line-height: 1.6;
     }
 
     .article :global(p:first-child::first-letter) {
         font-size: 32px;
-    }
-
-    .article {
-        padding: 12px;
     }
 
     @media only screen and (min-width: 600px) {

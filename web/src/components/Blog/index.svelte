@@ -108,7 +108,7 @@
         background-color: var(--primary);
         height: 50px;
         width: 50px;
-        transform: rotate(45deg) translate(71%, 0%);
+        transform: rotate(45deg) translate(72%, 0%);
         border-left: 2px solid var(--tangerine);
     }
 
