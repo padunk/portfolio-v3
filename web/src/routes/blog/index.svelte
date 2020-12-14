@@ -49,10 +49,6 @@
 </section>
 
 <style>
-    .blog {
-        margin-top: 120px;
-    }
-
     h2 {
         font-family: "AlienLeague Bold", var(--default-text);
         font-size: 56px;
@@ -61,10 +57,6 @@
     }
 
     @media only screen and (min-width: 600px) {
-        .blog {
-            margin-top: 0;
-        }
-
         h2 {
             padding: 0.83em 0;
         }

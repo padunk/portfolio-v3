@@ -30,5 +30,12 @@
 
     main {
         position: relative;
+        padding-top: 120px;
+    }
+
+    @media only screen and (min-width: 800px) {
+        main {
+            padding-top: 0;
+        }
     }
 </style>
