@@ -219,6 +219,9 @@
     .project-body__description {
         color: var(--primary);
         text-transform: uppercase;
+        font-family: "Oswald", var(--default-text);
+        font-weight: bold;
+        letter-spacing: 0.7px;
     }
 
     .tech-list {
