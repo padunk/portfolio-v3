@@ -1,5 +1,6 @@
 module.exports = {
     env: {
-        TESTING: process.env.TESTING,
+        SANITY_DATASET: process.env.SANITY_DATASET,
+        SANITY_ID: process.env.SANITY_ID,
     },
 };
