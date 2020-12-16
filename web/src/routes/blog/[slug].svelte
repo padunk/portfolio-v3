@@ -32,7 +32,6 @@
         const post = await client
             .fetch(query, { slug })
             .catch((err) => this.error(500, err));
-        console.log(post);
         return { post };
     }
 </script>
