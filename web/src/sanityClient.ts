@@ -3,7 +3,7 @@ import sanityClient from "@sanity/client";
 // const { projectId, dataset } = api;
 
 const client = sanityClient({
-    projectId: process.env.SANITY_ID,
+    projectId: process.env.SANITY_ID || "cfbg3m9j",
     dataset: "production",
     useCdn: true,
     token: process.env.SANITY_TOKEN,
