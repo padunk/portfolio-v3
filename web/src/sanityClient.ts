@@ -1,10 +1,11 @@
 import sanityClient from "@sanity/client";
-// import { api } from "../../portfolioblog/sanity.json";
-// const { projectId, dataset } = api;
+import { api } from "../../portfolioblog/sanity.json";
 
+const { projectId, dataset } = api;
+console.log(process.env.TESTING);
 const client = sanityClient({
-    projectId: process.env.SANITY_ID || "cfbg3m9j",
-    dataset: "production",
+    projectId: process.env.SANITY_ID || projectId,
+    dataset: process.env.SANITY_DATASET || dataset,
     useCdn: true,
     token: process.env.SANITY_TOKEN,
 });
