@@ -11,7 +11,6 @@ import typescript from "@rollup/plugin-typescript";
 import config from "sapper/config/rollup.js";
 import pkg from "./package.json";
 import json from "@rollup/plugin-json";
-const sapperEnv = require("sapper-environment");
 
 const mode = process.env.NODE_ENV;
 const dev = mode === "development";
@@ -30,7 +29,6 @@ export default {
         output: config.client.output(),
         plugins: [
             replace({
-                ...sapperEnv(),
                 "process.browser": true,
                 "process.env.NODE_ENV": JSON.stringify(mode),
             }),
@@ -114,7 +112,8 @@ export default {
             json(),
         ],
         external: Object.keys(pkg.dependencies).concat(
-            require("module").builtinModules
+            require("module").builtinModules ||
+                Object.keys(process.binding("natives"))
         ),
 
         preserveEntrySignatures: "strict",

@@ -1,7 +1,4 @@
 {
-  "packages": [
-    "web",
-    "studio"
-  ],
-  "version": "0.0.0"
+    "packages": ["web", "portfolioblog"],
+    "version": "0.0.0"
 }

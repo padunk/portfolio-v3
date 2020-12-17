@@ -1,20 +1,23 @@
 {
     "name": "portfolioblog",
     "private": true,
-    "version": "1.0.0",
+    "version": "0.0.1",
     "description": "",
     "main": "package.json",
     "author": "Abraham Anak Agung <abraham.agel@gmail.com>",
     "license": "MIT",
     "scripts": {
+        "dev": "sanity start",
         "start": "sanity start",
-        "build": "sanity build public -y"
+        "build": "sanity build public -y",
+        "test": "sanity check"
     },
     "keywords": [
         "sanity"
     ],
     "dependencies": {
         "@sanity/base": "^2.1.1",
+        "@sanity/cli": "^2.1.0",
         "@sanity/code-input": "^2.1.0",
         "@sanity/components": "^2.1.0",
         "@sanity/core": "^2.1.0",
@@ -27,9 +30,6 @@
         "prop-types": "^15.7",
         "react": "^17.0",
         "react-dom": "^17.0"
-    },
-    "devDependencies": {
-        "@sanity/cli": "^2.1.0"
     },
     "repository": {
         "type": "git",
