@@ -4,10 +4,10 @@ import { api } from "../../portfolioblog/sanity.json";
 const { projectId, dataset } = api;
 
 const client = sanityClient({
-    projectId: process.env.SANITY_ID || projectId,
-    dataset: process.env.SANITY_DATASET || dataset,
+    projectId: projectId || "cfbg3m9j",
+    dataset: dataset || "production",
     useCdn: true,
-    token: process.env.SANITY_TOKEN,
+    // token: process.env.SANITY_TOKEN,
 });
 
 export default client;
