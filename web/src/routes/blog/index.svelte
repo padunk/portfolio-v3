@@ -1,7 +1,18 @@
 <script context="module" lang="ts">
-    import client from "../../sanityClient";
+    // import client from "../../sanityClient";
+    import sanityClient from "@sanity/client";
+    import { api } from "../../../../portfolioblog/sanity.json";
 
-    export function preload({ params, query }) {
+    const { projectId, dataset } = api;
+
+    export const client = sanityClient({
+        projectId: process.env.SAPPER_APP_SANITY_PROJECT_ID || projectId,
+        dataset: process.env.SAPPER_APP_SANITY_DATASET || dataset,
+        useCdn: true,
+        token: process.env.SAPPER_APP_SANITY_TOKEN,
+    });
+
+    export function preload() {
         // TODO: pagination?
 
         return client

@@ -1,7 +1,8 @@
 <script context="module" lang="ts">
-    import client from "../../sanityClient";
+    // import client from "../../sanityClient";
     import BlockContent from "@movingbrands/svelte-portable-text";
     import serializers from "../../utils/serializers";
+    import { client } from "./index.svelte";
 
     export async function preload({ params }) {
         // the `slug` parameter is available because
