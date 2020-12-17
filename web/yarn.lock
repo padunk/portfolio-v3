@@ -1848,6 +1848,11 @@ detect-indent@^6.0.0:
   resolved "https://registry.yarnpkg.com/detect-indent/-/detect-indent-6.0.0.tgz#0abd0f549f69fc6659a254fe96786186b6f528fd"
   integrity sha512-oSyFlqaTHCItVRGK5RmrmjB+CmaMOW7IaNA/kdxqhoa6d17j/5ce9O9eWXmV/KEdRwqpQA+Vqe8a8Bsybu4YnA==
 
+dotenv@^8.0.0:
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-8.2.0.tgz#97e619259ada750eea3e4ea3e26bceea5424b16a"
+  integrity sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
+
 earcut@^2.1.5:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/earcut/-/earcut-2.2.2.tgz#41b0bc35f63e0fe80da7cddff28511e7e2e80d11"
@@ -2931,6 +2936,13 @@ same-origin@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/same-origin/-/same-origin-0.1.1.tgz#c2287d3192577df517acbbd6d1451a9c3c3914f5"
   integrity sha1-wih9MZJXffUXrLvW0UUanDw5FPU=
+
+sapper-environment@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/sapper-environment/-/sapper-environment-1.0.1.tgz#2844539644e3d9c1a391442ee6ad80fd04e0d56d"
+  integrity sha512-T0O6v6edaonmCH8eP2+ex3Mv3kuZJ8cH3NrCUPLPSXKw9PWcaPh2066dPO1MMkTLB04ONBf9tBX1XOlkEECM0A==
+  dependencies:
+    dotenv "^8.0.0"
 
 sapper@^0.28.0:
   version "0.28.10"
