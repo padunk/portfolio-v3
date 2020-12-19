@@ -4,6 +4,23 @@
         "description": "An application wouldn't complete without 'Stories'",
         "story": "I create this application based on \"every app won't complete without stories\" thing. This app have basic feature of CRUD and it also had auth service with Firebase Auth.",
         "challenge": "This app is still in progress since the main feature is not implemented yet, which is posting image and video and delete it after 24 hours.",
+        "feature": [
+            "authorization",
+            "post whisper",
+            "edit whisper",
+            "delete whisper",
+            "post comment to whisper",
+            "change user picture profile",
+            "edit user picture",
+            "like whisper",
+            "notification"
+        ],
+        "todo": [
+            "follow user",
+            "post video",
+            "post image",
+            "delete whisper after 24 hours"
+        ],
         "tech": [
             "ReactJS",
             "Redux",
@@ -15,18 +32,26 @@
             "Express"
         ],
         "imgPath": "/images/our_whispers",
-        "imgType": "png",
-        "videoPath": "https://res.cloudinary.com/padunk/video/upload/v1590378827/my_portfolio/our_whispers_zojlu9.mp4",
+        "imgType": "jpg",
+        "videoPath": "https://res.cloudinary.com/padunk/video/upload/v1608344780/my_portfolio/our-stories_aamifm.mp4",
         "videoType": "mp4",
         "alt": "our whispers app screenshot",
         "url": "https://fade-to-black-f3f53.web.app/",
-        "color": "#8b5d3f"
+        "color": "#dd6b20"
     },
     {
         "title": "Capchiq",
         "description": "Only fans clone in React Native",
         "story": "I made this app out of curiosity about OnlyFans site. OnlyFans didn't have a native based app but they go with PWA instead. So I just think why I don't clone one in React Native?",
         "challenge": "Creating native application with RN is not easy. There is much boilerplate, unknown error, and third party package is needed especially for Video. RN doesn't have Video element (Expo does), so it is very challenging for me to get the video, upload it and show it on the timeline.",
+        "feature": [
+            "authorization",
+            "post video",
+            "user profile page",
+            "follow user",
+            "notification"
+        ],
+        "todo": ["like video", "delete video"],
         "tech": [
             "ReactJS",
             "React Native",
@@ -42,5 +67,24 @@
         "alt": "capchiq app screenshot",
         "url": "#",
         "color": "#ac95eb"
+    },
+    {
+        "title": "Travel Sumatra",
+        "description": "AWWWARDS site cloning",
+        "story": "I create this clone site because I want to shrpen my skill in animation. Animation alwasy fascinate me. But it surely takes time to master it",
+        "challenge": "Working with animation in React is not easy. Framer motion makes it simple and responsive too. I learn much of using useContext API. If I going to do this again, I probably will using Redux Tool Kit instead of React useContext.",
+        "feature": ["custom cursor", "light - dark theme", "snap-cursor"],
+        "todo": [
+            "preserve theme",
+            "preserve canvas state when user change theme"
+        ],
+        "tech": ["Gatsby", "Framer Motion", "Styled-Component"],
+        "imgPath": "/images/travel_sumatra",
+        "imgType": "jpg",
+        "videoPath": "https://res.cloudinary.com/padunk/video/upload/v1608344753/my_portfolio/travel-sumatra_i8qfsu.mp4",
+        "videoType": "mp4",
+        "alt": "travel-sumatra site screenshot",
+        "url": "https://distracted-wing-fcd926.netlify.app/",
+        "color": "##ea291e"
     }
 ]

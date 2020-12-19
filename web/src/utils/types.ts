@@ -13,6 +13,8 @@ export type ProjectDetail = {
     description: string;
     story: string;
     challenge: string;
+    feature: string[];
+    todo: string[];
     tech: string[];
     imgPath: string;
     imgType: string;
