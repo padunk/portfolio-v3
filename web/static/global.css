@@ -1,6 +1,7 @@
 :root {
     --primary: hsl(260, 47%, 27%);
-    --primary-light: hsl(265, 21%, 53%);
+    --primary-light: hsl(265, 21%, 40%);
+    --primary-lightest: hsl(265, 21%, 53%);
     --primary-light-alpha-6: hsla(265, 21%, 53%, 0.6);
     --secondary: hsl(328, 53%, 69%);
     --secondary-bright: hsl(328, 78%, 54%);
