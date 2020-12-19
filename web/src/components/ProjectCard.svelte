@@ -134,14 +134,34 @@
             class:noEllipsis
             bind:this="{projectStoryElement}"
         >
-            <p class="project-body__description">{project.description}</p>
-            <p>{project.story}</p>
-            <p>{project.challenge}</p>
-            <ul class="tech-list">
+            <p class="project-body__description right-column">{project.description}</p>
+            <p class='right-column'>{project.story}</p>
+            <p class='right-column'>{project.challenge}</p>
+            <div class='project-body__sub'>
+                <p class='sub-title'>Feats:</p>
+                <ul class='ul-list'>
+                    {#each project.feature as feat}
+                        <li>{feat}</li>
+                    {/each}
+                </ul>
+            </div>
+            <div class='project-body__sub'>
+                <p class='sub-title'>Todo:</p>
+                <ul class='ul-list'>
+                    {#each project.todo as todo}
+                        <li>{todo}</li>
+                    {/each}
+                </ul>
+
+            </div>
+            <div class='project-body__sub'>
+                <p class='sub-title'>Stacks:</p>
+            <ul class="ul-list">
                 {#each project.tech as tech}
                     <li>{tech}</li>
                 {/each}
             </ul>
+        </div>
         </div>
     </div>
     <div class="project-header">
@@ -210,6 +230,7 @@
         line-height: 1.48;
         font-size: 16px;
         font-family: "Laila", var(--default-text);
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .noEllipsis {
@@ -224,10 +245,25 @@
         letter-spacing: 0.7px;
     }
 
-    .tech-list {
+    .right-column {
+        grid-column: 2 / -1;
+    }
+
+    .project-body__sub {
+        border-top: 1px solid var(--primary-lightest);
+    }
+
+    .sub-title {
+        color: var(--primary);
+    }
+
+    .ul-list {
+        list-style-type: none;
+        list-style-position: inside;
+        text-transform: capitalize;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        list-style-position: inside;
+        column-gap: 8px;
         padding: 0;
         font-size: 12px;
     }
@@ -246,7 +282,7 @@
         background: linear-gradient(
             to bottom,
             transparent 70%,
-            var(--primary-light)
+            var(--primary-lightest)
         );
         border-radius: 8px;
     }
@@ -344,7 +380,7 @@
             left: 25%;
         }
 
-        .tech-list {
+        .ul-list {
             font-size: 16px;
         }
     }
