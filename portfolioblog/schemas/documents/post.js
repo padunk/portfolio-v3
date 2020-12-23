@@ -98,12 +98,19 @@ export default {
             media: "mainImage",
         },
         prepare({ title = "No title", publishedAt, slug, media }) {
-            const dateSegment = format(parseISO(publishedAt), "yyyy/MM/dd");
-            const path = `/${dateSegment}/${slug.current}/`;
+            let subtitle;
+
+            if (publishedAt) {
+                const dateSegment = format(parseISO(publishedAt), "yyyy/MM/dd");
+                subtitle = `/${dateSegment}/${slug.current}/`;
+            } else {
+                subtitle = "Missing publishing date";
+            }
+
             return {
                 title,
                 media,
-                subtitle: publishedAt ? path : "Missing publishing date",
+                subtitle,
             };
         },
     },
