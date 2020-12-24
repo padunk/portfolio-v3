@@ -47,6 +47,7 @@ body {
     color: var(--primary-lightest);
     background-color: var(--primary);
     scrollbar-width: none;
+    min-height: 100vh;
 }
 
 body::-webkit-scrollbar {
