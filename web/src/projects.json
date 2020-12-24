@@ -70,10 +70,10 @@
     },
     {
         "title": "Travel Sumatra",
-        "description": "AWWWARDS site cloning",
-        "story": "I create this clone site because I want to shrpen my skill in animation. Animation alwasy fascinate me. But it surely takes time to master it",
-        "challenge": "Working with animation in React is not easy. Framer motion makes it simple and responsive too. I learn much of using useContext API. If I going to do this again, I probably will using Redux Tool Kit instead of React useContext.",
-        "feature": ["custom cursor", "light - dark theme", "snap-cursor"],
+        "description": "AWWWARDS site clone",
+        "story": "I create this clone site because I want to sharpen my skills in animation. Animation always fascinate me. But it surely takes time to master it",
+        "challenge": "Working with animation in React is not easy. Framer motion makes it simple and responsive too. I learn much of using React useContext API. If I going to do this again, I probably will using Redux Tool Kit instead of useContext.",
+        "feature": ["custom cursor", "light ~ dark theme", "snap-cursor"],
         "todo": [
             "preserve theme",
             "preserve canvas state when user change theme"
