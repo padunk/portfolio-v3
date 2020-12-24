@@ -45,19 +45,25 @@
             </div>
             <div class="author">
                 <span>By:</span>
-                <ul class="author-ul">
-                    {#each post.authorList as author}
+                <ul class="author-ul">                         
+                    {#if post.authorList.length === 0}
                         <li class="author-li">
-                            <div class="author-avatar__wrapper">
-                                <img
-                                    class="author-avatar"
-                                    src="{author.src}"
-                                    alt="{author.alt}"
-                                />
-                            </div>
-                            <p class="author-name">{author.name}</p>
+                            <p class="author-name">Famously Anonymous</p>
                         </li>
-                    {/each}
+                    {:else}
+                         {#each post.authorList as author}
+                             <li class="author-li">
+                                 <div class="author-avatar__wrapper">
+                                     <img
+                                         class="author-avatar"
+                                         src="{author.src}"
+                                         alt="{author.alt}"
+                                     />
+                                 </div>
+                                 <p class="author-name">{author.name}</p>
+                             </li>
+                         {/each}
+                    {/if}
                 </ul>
             </div>
             <div>
@@ -68,7 +74,7 @@
                             {formatDate(post.publishedAt)}</span>
                         -
                         <span class="category">
-                            {'#' + post.categoryList.join(', #')}
+                            {post.categoryList && post.categoryList.length > 0 ?'#' + post.categoryList.join(', #') :'' }
                         </span>
                     </p>
                 </div>
