@@ -1,12 +1,5 @@
 <script lang="ts">
     import { gsap } from "gsap";
-    import Codepen from "./Icons/Codepen.svelte";
-    import Github from "./Icons/Github.svelte";
-    import Instagram from "./Icons/Instagram.svelte";
-    import Linkedin from "./Icons/Linkedin.svelte";
-    import Mail from "./Icons/Mail.svelte";
-    import Twitter from "./Icons/Twitter.svelte";
-    import Whatsapp from "./Icons/Whatsapp.svelte";
     import { onMount } from "svelte";
     import { OTHER_STACKS, SOCMED_ACCOUNTS, STACKS } from "../utils/constants";
 
@@ -56,7 +49,8 @@
 </script>
 
 <svelte:head>
-    <title>About</title>
+    <title>Abraham Anak Agung: About Me</title>
+    <link rel="canonical" href="https://anakagung.com/about">
 </svelte:head>
 
 <section bind:this="{aboutPage}">

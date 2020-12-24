@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-    <title>Abraham Anak Agung</title>
+    <title>Abraham Anak Agung: Experienced React Developer</title>
 </svelte:head>
 
 <section id="main">

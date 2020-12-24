@@ -1,3 +1,7 @@
+<svelte:head>
+    <title>Abraham Anak Agung: Under Construction Site</title>
+</svelte:head>
+
 <h2>This page is under construction</h2>
 <div class="img-wrapper">
     <img

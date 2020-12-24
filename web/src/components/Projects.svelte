@@ -17,7 +17,8 @@
 </script>
 
 <svelte:head>
-    <title>Abraham Anak Agung - Projects</title>
+    <title>Abraham Anak Agung: Amazing Projects</title>
+    <link rel="canonical" href="https://anakagung.com/projects">
 </svelte:head>
 
 <div bind:this="{projectEl}" class="wrapper">

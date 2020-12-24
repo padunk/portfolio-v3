@@ -40,7 +40,7 @@
 </script>
 
 <svelte:head>
-    <title>Blog</title>
+    <title>Abraham Anak Agung: Blog</title>
 </svelte:head>
 
 <section class="blog">
