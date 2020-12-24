@@ -44,6 +44,32 @@
 
 <svelte:head>
     <title>{post.title}</title>
+    <!-- <meta
+            name="twitter:description"
+            content={post.excerpt}
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={post.title} />
+
+        <meta
+            property="og:image"
+            content={post.coverImage.url}
+        />
+        <meta
+            name="twitter:image"
+            content={post.coverImage.url}
+        />
+        <meta
+            name="twitter:image:src"
+            content={post.coverImage.url}
+        />
+
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:title" content={post.title} />
+        <meta
+            property="og:description"
+            content={post.excerpt}
+        /> -->
 </svelte:head>
 
 <div class="content">
@@ -61,6 +87,10 @@
 </div>
 
 <style>
+    :global(body::-webkit-scrollbar) {
+        display: block;    
+    }
+
     .content {
         position: relative;
         margin: 0 auto;
@@ -88,7 +118,7 @@
         padding: 12px;
         font-family: "Laila", var(--default-text);
         display: grid;
-        grid-template-columns: 1fr minmax(30ch, 70ch) 1fr;
+        grid-template-columns: 1fr minmax(27ch, 70ch) 1fr;
     }
 
     .article :global(h1, h2, h3, h4, h5, h6) {
