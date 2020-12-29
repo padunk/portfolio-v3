@@ -5,6 +5,8 @@
     export let code: string;
     export let language: string;
 
+    language === 'sh' ? 'shell': language;
+
     afterUpdate(async () => {
         await tick();
         Prism.highlightAll();
