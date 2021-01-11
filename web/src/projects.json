@@ -1,5 +1,62 @@
 [
     {
+        "title": "bigtextbloks",
+        "description": "A simple app showing big text.",
+        "story": "I create this application inspired by bigtextbox.com",
+        "challenge": "Creating theme and tackling Flash Of Unstyled Content on first render is surprisingly quite complex. I still can't fully figured it yet even tough I try to put my script at the top of the body element. Something is not quite connect, but I think for now the other feature is working well.",
+        "feature": [
+            "dark-light theme",
+            "preserved user theme",
+            "decrease font-size",
+            "increase font-size"
+        ],
+        "todo": [
+            "remove FOUC when user preferred theme is light"
+        ],
+        "tech": [
+            "JavaScript",
+            "HTML",
+            "CSS"
+        ],
+        "imgPath": "/images/bigtextboks",
+        "imgType": "jpg",
+        "videoPath": "null",
+        "videoType": "mp4",
+        "alt": "bigtextboks app screenshot",
+        "url": "https://bigtextboks.netlify.app",
+        "githubPath": "https://github.com/padunk/bigtextboks",
+        "color": "null"
+    },
+    {
+        "title": "Portfolio",
+        "description": "I redesign my portfolio in 2020",
+        "story": "I create this portfolio to showcase my projects and also blogging about what I learn or what I like to do when I'm not creating a beautiful app.",
+        "challenge": "Page transition with Sapper is quite tricky. I can't make it work properly yet. So I combined it with GSAP to create smooth and simple page transition. Creating my first blog site with Sanity CMS is exciting. Sanity is a different beast. Setting up schema and using Sanity's GROQ is really a good developer experience. It is far simple than I tought it will be.",
+        "feature": [
+            "page transition",
+            "blog with CMS",
+            "simple animation with GSAP"
+        ],
+        "todo": [
+            "design photo gallery"
+        ],
+        "tech": [
+            "Sapper",
+            "Svelte",
+            "GSAP",
+            "Sanity CMS",
+            "TypeScript"
+        ],
+        "imgPath": "/images/portfolio",
+        "imgType": "jpg",
+        "videoPath": "null",
+        "videoType": "mp4",
+        "alt": "portfolio page screenshot",
+        "url": "https://anakagung.com",
+        "githubPath": "https://github.com/padunk/portfolio-v3",
+        "color": "null"
+    },
+    {
         "title": "Our Whispers",
         "description": "An application wouldn't complete without 'Stories'",
         "story": "I create this application based on \"every app won't complete without stories\" thing. This app have basic feature of CRUD and it also had auth service with Firebase Auth.",
@@ -37,6 +94,7 @@
         "videoType": "mp4",
         "alt": "our whispers app screenshot",
         "url": "https://fade-to-black-f3f53.web.app/",
+        "githubPath": "https://github.com/padunk/whispers",
         "color": "#dd6b20"
     },
     {
@@ -66,6 +124,7 @@
         "videoType": "mp4",
         "alt": "capchiq app screenshot",
         "url": "https://github.com/padunk/capchiq",
+        "githubPath": "https://github.com/padunk/capchiq",
         "color": "#ac95eb"
     },
     {
@@ -85,6 +144,7 @@
         "videoType": "mp4",
         "alt": "travel-sumatra site screenshot",
         "url": "https://distracted-wing-fcd926.netlify.app/",
+        "githubPath": "https://github.com/padunk/travel-sumatra",
         "color": "##ea291e"
     }
 ]
