@@ -258,7 +258,6 @@
     }
 
     .ul-list {
-        list-style-type: none;
         list-style-position: inside;
         text-transform: capitalize;
         display: grid;
