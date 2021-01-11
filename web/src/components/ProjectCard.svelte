@@ -5,6 +5,7 @@
     import ChevronDown from "./Icons/ChevronDown.svelte";
     import ChevronUp from "./Icons/ChevronUp.svelte";
     import type { ProjectDetail } from "../utils/types";
+    import LinkGradient from "./LinkGradient.svelte";
 
     export let project: ProjectDetail;
     export let index: number;
@@ -161,6 +162,7 @@
                     <li>{tech}</li>
                 {/each}
             </ul>
+            <LinkGradient href={project.githubPath} text="CODE SOURCE" />
         </div>
         </div>
     </div>
