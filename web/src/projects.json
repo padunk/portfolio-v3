@@ -63,14 +63,14 @@
         "challenge": "This app is still in progress since the main feature is not implemented yet, which is posting image and video and delete it after 24 hours.",
         "feature": [
             "authorization",
-            "post whisper",
+            "post new whisper",
             "edit whisper",
             "delete whisper",
             "post comment to whisper",
-            "change user picture profile",
-            "edit user picture",
+            "update user avatar",
             "like whisper",
-            "notification"
+            "unlike whisper",
+            "notification on new comment"
         ],
         "todo": [
             "follow user",
@@ -81,12 +81,15 @@
         "tech": [
             "ReactJS",
             "Redux",
+            "React Router",
             "TypeScript",
-            "Tailwind",
+            "TailwindCSS",
             "Firebase",
             "Formik",
             "Yup",
-            "Express"
+            "Express",
+            "Axios",
+            "DayJS"
         ],
         "imgPath": "/images/our_whispers",
         "imgType": "jpg",
@@ -94,7 +97,7 @@
         "videoType": "mp4",
         "alt": "our whispers app screenshot",
         "url": "https://fade-to-black-f3f53.web.app/",
-        "githubPath": "https://github.com/padunk/whispers",
+        "githubPath": "https://github.com/padunk/fade-to-black",
         "color": "#dd6b20"
     },
     {
