@@ -22,6 +22,7 @@ export type ProjectDetail = {
     videoType: string;
     alt: string;
     url: string;
+    githubPath: string;
     color: string;
 };
 
