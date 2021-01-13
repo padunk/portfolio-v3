@@ -80,7 +80,7 @@ html {
 body {
     margin: 0;
     box-sizing: border-box !important;
-    color: var(--primary-light);
+    color: var(--primary-lightest);
     background-color: var(--primary);
     scrollbar-width: none;
     min-height: 100vh;
