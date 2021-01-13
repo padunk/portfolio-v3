@@ -115,6 +115,12 @@
                 >AWS - Amplify</a>
                 to get better understanding about serverless.
             </p>
+            <p class="text">
+                My 2020 Accomplishment: <a class='link-gradient' href="https://freecodecamp.org/news/2020-top-contributors">freeCodeCamp Codebase Top Contributors</a>
+            </p>
+            <div class="fcc-img">
+                <img src="/images/fcc_top_contributors.png" alt="freecodecamp codebase top contributors">
+            </div>
         </div>
     </article>
     <h3 class="social-media__title">
@@ -281,6 +287,18 @@
             var(--tangerine-light-alpha-8),
             transparent 75%
         );
+    }
+
+    .fcc-img {
+        width: clamp(200px, 100%, 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 87%, 90% 100%, 0 100%);
+        overflow: hidden;
+    }
+
+    .fcc-img img {
+        object-fit: cover;
+        width: 98%;
+        height: 98%;
     }
 
     .social-media {
