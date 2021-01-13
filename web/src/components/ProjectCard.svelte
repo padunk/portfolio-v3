@@ -211,6 +211,7 @@
         width: 100%;
         height: 312.5px;
         overflow: hidden;
+        color: var(--primary-light);
     }
 
     .project-body {
