@@ -38,8 +38,10 @@
 
 <script lang="ts">
     import Image from "../../components/Blog/Image.svelte";
+    import Socmed from "../../components/Socmed.svelte";
 
     export let post: any;
+    let year = new Date().getFullYear()
 </script>
 
 <svelte:head>
@@ -84,6 +86,10 @@
         </figure>
         <BlockContent blocks="{post.body}" serializers="{serializers}" />
     </article>
+    <footer>
+        <p>&copy; {year} - Abraham Anak Agung</p>
+        <Socmed />
+    </footer>
 </div>
 
 <style>
@@ -146,6 +152,14 @@
 
     .article :global(p:first-child::first-letter) {
         font-size: 32px;
+    }
+
+    .article :global(li) {
+        padding: 8px 0;
+    }
+
+    footer p {
+        text-align: center;
     }
 
     @media only screen and (min-width: 600px) {
