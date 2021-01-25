@@ -71,6 +71,7 @@
     <g transform="translate(0,-275.83331)" id="layer1">
         <a
             href="{useSegment('projects')}"
+            aria-label="Go to projects page"
             class:cursorPointer
             on:mouseenter="{handleMouseEnter}"
             on:mouseleave="{handleMouseLeave}"
@@ -83,6 +84,7 @@
         </a>
         <a
             href="{useSegment('about')}"
+            aria-label="Go to about page"
             class:cursorPointer
             on:mouseenter="{handleMouseEnter}"
             on:mouseleave="{handleMouseLeave}"
@@ -95,6 +97,7 @@
         </a>
         <a
             href="{useSegment('blog')}"
+            aria-label="Go to blog page"
             class:cursorPointer
             on:mouseenter="{handleMouseEnter}"
             on:mouseleave="{handleMouseLeave}"
@@ -107,6 +110,7 @@
         </a>
         <a
             href="{useSegment('.')}"
+            aria-label="Go to home page"
             class:cursorPointer
             on:mouseenter="{handleMouseEnter}"
             on:mouseleave="{handleMouseLeave}"
