@@ -211,7 +211,7 @@
         width: 100%;
         height: 312.5px;
         overflow: hidden;
-        color: var(--primary-light);
+        color: var(--primary);
     }
 
     .project-body {
@@ -253,7 +253,7 @@
     }
 
     .project-body__sub {
-        border-top: 1px solid var(--primary-lightest);
+        border-top: 1px solid var(--primary-light-alpha-6);
     }
 
     .sub-title {
