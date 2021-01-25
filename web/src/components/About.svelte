@@ -1,7 +1,8 @@
 <script lang="ts">
     import { gsap } from "gsap";
     import { onMount } from "svelte";
-    import { OTHER_STACKS, SOCMED_ACCOUNTS, STACKS } from "../utils/constants";
+    import { OTHER_STACKS, STACKS } from "../utils/constants";
+    import Socmed from "./Socmed.svelte";
 
     let hide: boolean = true;
     const tl = gsap.timeline();
@@ -134,26 +135,7 @@
         </a>
         or stalk me &#x1F609;
     </h3>
-    <div class="social-media">
-        <ul class="social-media__lists">
-            {#each SOCMED_ACCOUNTS as account}
-                <li>
-                    <a
-                        href="{account.href}"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        class="social-media__link"
-                    >
-                        <svelte:component
-                            this="{account.component}"
-                            size="{account.size}"
-                            className="{account.className}"
-                        />
-                    </a>
-                </li>
-            {/each}
-        </ul>
-    </div>
+    <Socmed />
 </section>
 
 <style>
@@ -301,10 +283,6 @@
         height: 98%;
     }
 
-    .social-media {
-        padding-bottom: 4em;
-    }
-
     .social-media__title {
         text-align: center;
     }
@@ -329,18 +307,6 @@
         background-clip: text;
         box-decoration-break: clone;
         text-shadow: none;
-    }
-
-    .social-media__lists {
-        display: flex;
-        column-gap: 16px;
-        list-style-type: none;
-        padding: 0;
-        justify-content: center;
-    }
-
-    .social-media__link {
-        color: var(--primary-light);
     }
 
     .hide {
