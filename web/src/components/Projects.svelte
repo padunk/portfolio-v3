@@ -2,8 +2,10 @@
     import { fade, fly } from "svelte/transition";
     import ProjectCard from "./ProjectCard.svelte";
     import projects from "../../src/projects.json";
-    import { onDestroy, onMount } from "svelte";
+    import otherProjects from '../otherProjects.json';
+    import { onMount } from "svelte";
     import gsap from "gsap";
+    import OtherProjectCard from "./OtherProjectCard.svelte";
 
     const tl = gsap.timeline();
     let projectEl: HTMLDivElement;
@@ -31,11 +33,19 @@
             <ProjectCard project="{project}" index="{i}" />
         {/each}
     </section>
+
+    <section class="other-project">
+        <h2>Other Projects:</h2>
+        {#each otherProjects as otherProject}
+            <OtherProjectCard {otherProject} />
+        {/each}
+    </section>
 </div>
 
 <style>
     .wrapper {
         visibility: hidden;
+        padding-bottom: 32px;
     }
 
     .title {
@@ -52,6 +62,16 @@
         align-items: center;
         flex-direction: column;
         row-gap: 16px;
+    }
+
+    .other-project {
+        display: flex;
+        flex-direction: column;
+        row-gap: 24px;
+        justify-content: flex-start;
+        align-items: center;
+        font-family: "Laila", sans-serif;
+        padding: 0 12px;
     }
 
     @media only screen and (min-width: 720px) {
