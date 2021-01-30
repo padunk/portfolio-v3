@@ -1,5 +1,22 @@
 [
     {
+        "title": "twitter in 2077 (UI Only)",
+        "description": "I love Cyberpunk 2077 game, so I redesigned Twitter UI with inspiration from the game.",
+        "story": "Building clone project like this is a lot of fun. Especially when you love using the application. I love using Twitter as an application to connect with the world. And I also love watching Cyberpunk 2077 game (I don't have it yet, my computer can't handle it). The graphics was so good and the color was vibrant. So I combined dull Twitter theme with vibrant CyberPunk colors.",
+        "feature": [
+            "new icons",
+            "bright-color",
+            "animation on load",
+            "showing thread excerpt instead of 'Show this thread'"
+        ],
+        "tech": [
+            "svelte"
+        ],
+        "imgSrc": "https://res.cloudinary.com/padunk/image/upload/v1611982290/my_portfolio/Screenshot_2021-01-25_18.28.26_uenyev.png",
+        "url": "https://twitter-2077.vercel.app",
+        "githubPath": "https://github.com/padunk/twitter-cyberpunk-2077"
+    },
+    {
         "title": "bigtextboks",
         "description": "A simple app showing big text.",
         "story": "I create this application inspired by bigtextbox.com. Creating theme and tackling Flash Of Unstyled Content on first render is surprisingly quite complex. I still can't fully figured it yet even tough I try to put my script at the top of the body element. Something is not quite connect, but I think for now the other feature is working well.",
@@ -17,22 +34,5 @@
         "imgSrc": "/images/bigtextboks.png",
         "url": "https://bigtextboks.netlify.app",
         "githubPath": "https://github.com/padunk/bigtextboks"
-    },
-    {
-        "title": "twitter in 2077 (UI Only)",
-        "description": "I love Cyberpunk 2077 game, so I redesigned Twitter UI with inspiration from the game.",
-        "story": "Building clone project like this is a lot of fun. Especially when you love using the application. I love using Twitter as an application to connect with the world. And I also love watching Cyberpunk 2077 game (I don't have it yet, my computer can't handle it). The graphics was so good and the color was vibrant. So I combined dull Twitter theme with vibrant CyberPunk colors.",
-        "feature": [
-            "new icons",
-            "bright-color",
-            "animation on load",
-            "showing thread excerpt instead of 'Show this thread'"
-        ],
-        "tech": [
-            "svelte"
-        ],
-        "imgSrc": "https://res.cloudinary.com/padunk/image/upload/v1611982290/my_portfolio/Screenshot_2021-01-25_18.28.26_uenyev.png",
-        "url": "twitter-2077.vercel.app",
-        "githubPath": "https://github.com/padunk/twitter-cyberpunk-2077"
-    }
+    }    
 ]
