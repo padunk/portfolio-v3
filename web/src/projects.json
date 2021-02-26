@@ -1,9 +1,9 @@
 [
     {
         "title": "Our Whispers",
-        "description": "An application wouldn't complete without 'Stories'",
-        "story": "I create this application based on \"every app won't complete without stories\" thing. This app have basic feature of CRUD and it also had auth service with Firebase Auth.",
-        "challenge": "This app is still in progress since the main feature is not implemented yet, which is posting image and video and delete it after 24 hours.",
+        "description": "Another Twitter clone application",
+        "story": "I create this application based on Twitter. This app have basic feature of CRUD and it also had auth service with Firebase Auth.",
+        "challenge": "This is the first time I wrote Firebase Function. It is much like writing REST API. The main challenge is that I need to carefully tought when updating or deleting data.",
         "feature": [
             "authorization",
             "post new whisper",
@@ -17,9 +17,7 @@
         ],
         "todo": [
             "follow user",
-            "post video",
-            "post image",
-            "delete whisper after 24 hours"
+            "delete whisper after 24 hours?"
         ],
         "tech": [
             "ReactJS",
