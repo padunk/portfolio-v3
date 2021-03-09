@@ -43,8 +43,8 @@
     },
     {
         "title": "Capchiq",
-        "description": "Only fans clone in React Native",
-        "story": "I made this app out of curiosity about OnlyFans site. OnlyFans didn't have a native based app but they go with PWA instead. So I just think why I don't clone one in React Native?",
+        "description": "Video sharing application in React Native",
+        "story": "I made this app out of curiosity about OnlyFans site. So I just think why I don't made something like that in React Native?",
         "challenge": "Creating native application with RN is not easy. There is much boilerplate, unknown error, and third party package is needed especially for Video. RN doesn't have Video element (Expo does), so it is very challenging for me to get the video, upload it and show it on the timeline.",
         "feature": [
             "authorization",
