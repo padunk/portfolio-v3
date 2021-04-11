@@ -1,5 +1,66 @@
 [
     {
+        "title": "GROQ of Thrones",
+        "description": "be a groq guru in ten steps",
+        "story": "This application is inspired by GROQ language, GROQ lesson by Magnus Holm in CSS-Tricks blog, and GraphQL of Thrones by Swyx.",
+        "challenge": "Configuring Codemirror to work with React and Vite is quite challenging. I ended up using Codemirror 6 instead of version 5 because it work perfectly with Vite. Chakra UI is also great in creating simple application prototype like this one.",
+        "feature": [
+            "code GROQ language in simple code editor",
+            "clear and step by step instruction",
+            "lots of GROQ sources"
+        ],
+        "todo": [
+            "showing GROQ syntax error in code editor",
+            "help options with code result",
+            "game points, so it is more interesting to learn",
+            "preserve user code in local storage"
+        ],
+        "tech": [
+            "ReactJS",
+            "Vite",
+            "ChakraUI",
+            "Codemirror6",
+            "GroqJS"
+        ],
+        "imgPath": "/images/groq_of_thrones",
+        "imgType": "png",
+        "videoPath": null,
+        "videoType": "mp4",
+        "alt": "groq of thrones app screenshot",
+        "url": "https://groq-of-thrones.netlify.app/",
+        "githubPath": "https://github.com/padunk/groq-of-thrones",
+        "color": "#66e192"
+    },
+    {
+        "title": "Marvelous Florist",
+        "description": "Simple Landing Page Project for Client",
+        "story": "I create this application based on design in Behance request by my client. It is simple landing page that integrate with Instagram post and Whatsapp for price quotation.",
+        "challenge": "Instagram API is pretty clear and easy to understand. The only problem that I still had is renewing the long lived token and store it in the env variable. I still can't figure out the best way to do this yet.",
+        "feature": [
+            "Connect with Instagram Post",
+            "Showing location with Google Map",
+            "Use Whatsapp for quoting price"
+        ],
+        "todo": [
+            "made a full e-commerce application",
+            "find the good payment gateway in my client country"
+        ],
+        "tech": [
+            "ReactJS",
+            "Vite",
+            "Twin Macro",
+            "Styled Component"
+        ],
+        "imgPath": "/images/marv_flo",
+        "imgType": "png",
+        "videoPath": null,
+        "videoType": "mp4",
+        "alt": "marvelous florist website screenshot",
+        "url": "https://marvelous-florist.netlify.app/",
+        "githubPath": "https://github.com/padunk/marv-flo",
+        "color": "#5c98e1"
+    },
+    {
         "title": "Our Whispers",
         "description": "Another Twitter clone application",
         "story": "I create this application based on Twitter. This app have basic feature of CRUD and it also had auth service with Firebase Auth.",
@@ -113,11 +174,11 @@
         ],
         "imgPath": "/images/portfolio",
         "imgType": "jpg",
-        "videoPath": "null",
+        "videoPath": null,
         "videoType": "mp4",
         "alt": "portfolio page screenshot",
         "url": "https://anakagung.com",
         "githubPath": "https://github.com/padunk/portfolio-v3",
-        "color": "null"
+        "color": null
     }
 ]
