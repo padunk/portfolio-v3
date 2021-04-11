@@ -135,35 +135,36 @@
             class:noEllipsis
             bind:this="{projectStoryElement}"
         >
-            <p class="project-body__description right-column">{project.description}</p>
-            <p class='right-column'>{project.story}</p>
-            <p class='right-column'>{project.challenge}</p>
-            <div class='project-body__sub'>
-                <p class='sub-title'>Feats:</p>
-                <ul class='ul-list'>
+            <p class="project-body__description right-column">
+                {project.description}
+            </p>
+            <p class="right-column">{project.story}</p>
+            <p class="right-column">{project.challenge}</p>
+            <div class="project-body__sub">
+                <p class="sub-title">Feats:</p>
+                <ul class="ul-list">
                     {#each project.feature as feat}
                         <li>{feat}</li>
                     {/each}
                 </ul>
             </div>
-            <div class='project-body__sub'>
-                <p class='sub-title'>Todo:</p>
-                <ul class='ul-list'>
+            <div class="project-body__sub">
+                <p class="sub-title">Todo:</p>
+                <ul class="ul-list">
                     {#each project.todo as todo}
                         <li>{todo}</li>
                     {/each}
                 </ul>
-
             </div>
-            <div class='project-body__sub'>
-                <p class='sub-title'>Stacks:</p>
-            <ul class="ul-list">
-                {#each project.tech as tech}
-                    <li>{tech}</li>
-                {/each}
-            </ul>
-            <LinkGradient href={project.githubPath} text="CODE SOURCE" />
-        </div>
+            <div class="project-body__sub">
+                <p class="sub-title">Stacks:</p>
+                <ul class="ul-list">
+                    {#each project.tech as tech}
+                        <li>{tech}</li>
+                    {/each}
+                </ul>
+                <LinkGradient href="{project.githubPath}" text="CODE SOURCE" />
+            </div>
         </div>
     </div>
     <div class="project-header">
@@ -187,14 +188,16 @@
         on:mouseleave="{() => (showingVideo = false)}"
         on:mousemove="{controlCursorDisplay}"
     >
-        {#if showingVideo}
-            <!-- content here -->
-            <video autoplay loop muted class="project-media">
+        {#if showingVideo && project.videoPath}
+            <video autoplay loop muted controls class="project-media">
                 <source src="{project.videoPath}" type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
+        {:else if showingVideo && !project.videoPath}
+            <div class="video-not-available">
+                <p>Video not available.</p>
+            </div>
         {:else}
-            <!-- else content here -->
             <img
                 src="{project.imgPath}.{project.imgType}"
                 alt="{project.alt}"
@@ -336,6 +339,16 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+
+    .video-not-available {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background-color: var(--primary-light);
+        color: var(--primary-lightest);
     }
 
     .cursorNone {
