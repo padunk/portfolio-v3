@@ -41,37 +41,28 @@
     import Socmed from "../../components/Socmed.svelte";
 
     export let post: any;
-    let year = new Date().getFullYear()
+    let year = new Date().getFullYear();
 </script>
 
 <svelte:head>
     <title>{post.title}</title>
-    <!-- <meta
-            name="twitter:description"
-            content={post.excerpt}
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={post.title} />
+    <meta
+        name="twitter:description"
+        content="{post.excerpt[0].children[0].text}"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{post.title}" />
 
-        <meta
-            property="og:image"
-            content={post.coverImage.url}
-        />
-        <meta
-            name="twitter:image"
-            content={post.coverImage.url}
-        />
-        <meta
-            name="twitter:image:src"
-            content={post.coverImage.url}
-        />
+    <meta property="og:image" content="{post.coverImage.url}" />
+    <meta name="twitter:image" content="{post.coverImage.url}" />
+    <meta name="twitter:image:src" content="{post.coverImage.url}" />
 
-        <meta property="og:locale" content="en_US" />
-        <meta property="og:title" content={post.title} />
-        <meta
-            property="og:description"
-            content={post.excerpt}
-        /> -->
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="{post.title}" />
+    <meta
+        property="og:description"
+        content="{post.excerpt[0].children[0].text}"
+    />
 </svelte:head>
 
 <div class="content">
@@ -94,7 +85,7 @@
 
 <style>
     :global(body::-webkit-scrollbar) {
-        display: block;    
+        display: block;
     }
 
     .content {
@@ -120,11 +111,17 @@
         text-align: center;
     }
 
+    p {
+        font-family: "Oswald", var(--default-text);
+        letter-spacing: 2px;
+    }
+
     .article {
         padding: 12px;
         font-family: "Laila", var(--default-text);
         display: grid;
         grid-template-columns: 1fr minmax(27ch, 70ch) 1fr;
+        font-size: 18px;
     }
 
     .article :global(h1, h2, h3, h4, h5, h6) {
@@ -146,8 +143,8 @@
     }
 
     .article :global(p) {
-        font-size: 18px;
         line-height: 1.6;
+        font-size: inherit;
     }
 
     .article :global(p:first-child::first-letter) {
@@ -156,6 +153,7 @@
 
     .article :global(li) {
         padding: 8px 0;
+        line-height: 1.6;
     }
 
     footer p {
@@ -165,6 +163,9 @@
     @media only screen and (min-width: 600px) {
         h2 {
             margin-top: 0.83em;
+        }
+        .article {
+            font-size: 20px;
         }
     }
 </style>
