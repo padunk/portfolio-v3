@@ -51,7 +51,7 @@
 
 <svelte:head>
     <title>Abraham Anak Agung: About Me</title>
-    <link rel="canonical" href="https://anakagung.com/about">
+    <link rel="canonical" href="https://anakagung.com/about" />
 </svelte:head>
 
 <section bind:this="{aboutPage}">
@@ -74,11 +74,39 @@
                 </div>
             </div>
             <p class="text">
-                I'm a web developer, photographer, and teacher based in
-                Indonesia (GMT +7). I love creating beautiful application and
-                solving complex tasks.
+                I'm a
+                <em>Web wrench</em>
+                (yeah... that's what I called myself). I'm not graduated from a
+                fancy Bootcamp, I don't have a CS degree, and I'm a community &
+                self-taught person.
             </p>
-            <p class="text">My current tools is:</p>
+            <p class="text">
+                So what's good? Honestly I still don't know much about this vast
+                technology industry.
+            </p>
+            <ul>
+                <li>
+                    I graduated with a Master degree in Management (majoring in
+                    Finance)
+                </li>
+                <li>
+                    I was a Project Manager in the manufacturing and poultry
+                    industry for 11 years.
+                </li>
+                <li>
+                    Built my own travel company and got shut down by COVID-19.
+                </li>
+                <li>I know React, Svelte, and React Native.</li>
+                <li>I love Twin Macro and ChakraUI for styling.</li>
+                <li>
+                    I'm on GMT+7, so I can code while others were asleep (if you
+                    are in other side of the 🌎).
+                </li>
+            </ul>
+            <p class="text">
+                And not to mention that I also love 🍜, 🍻, 🏊‍♂️, and 🚵‍♂️.
+            </p>
+            <!-- <p class="text">My current tools is:</p>
             <ul>
                 {#each STACKS as stack}
                     <li>
@@ -115,13 +143,20 @@
                     rel="noopener noreferrer"
                 >AWS - Amplify</a>
                 to get better understanding about serverless.
-            </p>
-            <p class="text">
-                My 2020 Accomplishment: <a class='link-gradient' href="https://freecodecamp.org/news/2020-top-contributors">freeCodeCamp Codebase Top Contributors</a>
+            </p> -->
+            <!-- <p class="text">
+                My 2020 Accomplishment:
+                <a
+                    class="link-gradient"
+                    href="https://freecodecamp.org/news/2020-top-contributors"
+                >freeCodeCamp Codebase Top Contributors</a>
             </p>
             <div class="fcc-img">
-                <img src="/images/fcc_top_contributors.png" alt="freecodecamp codebase top contributors">
-            </div>
+                <img
+                    src="/images/fcc_top_contributors.png"
+                    alt="freecodecamp codebase top contributors"
+                />
+            </div> -->
         </div>
     </article>
     <h3 class="social-media__title">
@@ -217,10 +252,17 @@
 
     .text {
         line-height: 1.344;
+        font-size: 24px;
         margin-bottom: 0;
+        letter-spacing: 0.33px;
     }
 
-    ul {
+    li {
+        line-height: 1.5;
+        font-size: 20px;
+    }
+
+    /* ul {
         list-style-type: none;
         margin-top: 0.5em;
     }
@@ -281,10 +323,11 @@
         object-fit: cover;
         width: 98%;
         height: 98%;
-    }
+    } */
 
     .social-media__title {
         text-align: center;
+        font-family: "Oswald", var(--default-text);
     }
 
     .link-gradient:link,
