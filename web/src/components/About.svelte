@@ -54,11 +54,11 @@
     <link rel="canonical" href="https://anakagung.com/about" />
 </svelte:head>
 
+<div class="shake-hand" class:hide>&#x1F91D;</div>
 <section bind:this="{aboutPage}">
     <div>
         <h2 class="title">ABOUT <span class="title-name">ABRAHAM</span></h2>
     </div>
-    <div class="shake-hand" class:hide>&#x1F91D;</div>
     <article class="about-me">
         <div class="about-me__content">
             <div class="flex-horizontal">
