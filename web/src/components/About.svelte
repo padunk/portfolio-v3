@@ -74,13 +74,10 @@
                 </div>
             </div>
             <p class="text">
-                I'm a
-                <em>Web wrench</em>
-                (yeah... that's what I called myself). I'm not graduated from a
-                fancy Bootcamp, I don't have a CS degree, and I'm a community &
-                self-taught person.
+                I'm a Web and Mobile Developer specializing in Cloud and DApp. I
+                💖 building smart applications and solving complex tasks.
             </p>
-            <p class="text">
+            <!-- <p class="text">
                 So what's good? Honestly I still don't know much about this vast
                 technology industry.
             </p>
@@ -100,9 +97,9 @@
                 <li>I love Twin Macro and ChakraUI for styling.</li>
                 <li>
                     I'm on GMT+7, so I can code while others were asleep (if you
-                    are in other side of the 🌎).
+                    are on other side of the 🌎).
                 </li>
-            </ul>
+            </ul> -->
             <p class="text">
                 And not to mention that I also love 🍜, 🍻, 🏊‍♂️, and 🚵‍♂️.
             </p>
@@ -257,12 +254,13 @@
         letter-spacing: 0.33px;
     }
 
+    /*
     li {
         line-height: 1.5;
         font-size: 20px;
     }
 
-    /* ul {
+     ul {
         list-style-type: none;
         margin-top: 0.5em;
     }
