@@ -1,3 +1,11 @@
+<script context='module'>
+    export function preload({ params, query }) {
+        return this.fetch('rss.xml').then(() => {
+            console.log('success create route: /rss.xml')
+            // return this.fetch('rss.xml')
+        }).catch(err => console.log(err));
+    }
+</script>
 <script>
     import MainNav from "../components/MainNav.svelte";
 </script>
