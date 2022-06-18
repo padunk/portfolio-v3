@@ -11,6 +11,26 @@
                 ease: "expo.out",
                 backgroundColor: "white",
             },
+            onComplete: () => {
+                const mainBackground = document.querySelector('.moving-background')
+                mainBackground.classList.add('add-bg')
+                
+                // const subTL = gsap.timeline({})
+                // subTL.to(`[class~=bg-left-image]`, {
+                //     opacity: 0
+                // })
+                // .to(`[class~=bg-center-image]`, {
+                //     opacity: 0
+                // })
+                // .to(`[class~=bg-right-image]`, {
+                //     opacity: 0
+                // })
+
+                // const bg = ['bg-left', 'bg-center','bg-right']
+                // bg.forEach(b => {
+                //    document.querySelector(`[class^=${b}]`).classList.remove(`${b}-image`)
+                // })
+            }
         });
         const init = () => {
             tl.from(".hero", {
@@ -68,7 +88,7 @@
 
 <div class="hero" out:fade|local>
     <div class="moving-background">
-        <section class="bg-left">
+        <section class="bg-left bg-left-image">
             <div class="hero-section section-left">
                 <h2 class="hero-title">Abraham</h2>
                 <a aria-current="projects" class="hero-nav" href="projects"><h2>
@@ -77,7 +97,7 @@
             </div>
         </section>
 
-        <section class="bg-center">
+        <section class="bg-center bg-center-image">
             <div class="hero-section section-center">
                 <h2 class="hero-title">Anak</h2>
                 <span class="hero-nav">
@@ -98,7 +118,7 @@
             </div>
         </section>
 
-        <section class="bg-right">
+        <section class="bg-right bg-right-image">
             <div class="hero-section section-right">
                 <h2 class="hero-title">Agung</h2>
                 <a aria-current="about" class="hero-nav" href="about"><h2>
@@ -139,6 +159,12 @@
         flex-direction: column;
         background-color: white;
     }
+    :global(.add-bg) {
+        background-image: url("/images/hero-portrait.jpg");
+        background-size: cover;
+        background-position: 0% 70%;
+        background-repeat: no-repeat;
+    }
 
     .bg-left,
     .bg-center,
@@ -146,12 +172,22 @@
         height: 33.3333%;
         width: 100%;
         display: flex;
-        background-image: url("/images/hero-portrait.jpg");
-        background-color: var(--primary);
-        background-attachment: fixed;
+        /* background-color: var(--primary); */
         background-repeat: no-repeat;
         background-size: cover;
-        background-position: 0% 80%;
+        background-position-y: bottom;
+        background-origin: content-box;
+        transition: all 100ms;
+    }
+
+    .bg-left-image {
+        background-image: url("/images/hero-portrait-left.jpg");
+    }
+    .bg-center-image {
+        background-image: url("/images/hero-portrait-center.jpg");
+    }
+    .bg-right-image {
+        background-image: url("/images/hero-portrait-right.jpg");
     }
 
     .bg-left::after,
@@ -226,13 +262,28 @@
         .moving-background {
             flex-direction: row;
         }
+        :global(.add-bg) {
+            background-image: url("/images/hero-landscape.jpg");
+            background-size: cover;
+            background-position: 0% 70%;
+            background-repeat: no-repeat;
+        }
 
         .bg-left,
         .bg-center,
         .bg-right {
             width: 33.3333%;
             height: 100%;
-            background-image: url("/images/hero-landscape.jpg");
+            background-position-y: 70%;
+        }
+        .bg-left-image {
+            background-image: url("/images/hero-landscape-left.jpg");
+        }
+        .bg-center-image {
+            background-image: url("/images/hero-landscape-center.jpg");
+        }
+        .bg-right-image {
+            background-image: url("/images/hero-landscape-right.jpg");
         }
     }
 </style>
